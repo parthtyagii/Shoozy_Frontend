@@ -29,7 +29,7 @@ function Navbar() {
                     <li>Home</li>
                     <li>
                         <select name="products" id="products">
-                            <option value="-">Products</option>
+                            <option value="-" disabled>Products</option>
                             <option value="Nike">Nike</option>
                             <option value="Adidas">Adidas</option>
                             <option value="Reebok">Reebok</option>
