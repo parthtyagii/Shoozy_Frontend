@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Anton&family=Bebas+Neue&family=Luckiest+Guy&family=Roboto&family=Titillium+Web&display=swap');
+
+
+.shoeContainer {
+    width: 220px;
+    height: 260px;
+    /* background-color: antiquewhite; */
+    border: 1px solid #8a898d;
+    font-family: 'Roboto', sans-serif;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.shoeUpperPart {
+    width: 100%;
+    height: 60%;
+    padding: 10px;
+    position: relative;
+}
+
+.shoeImg {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shoeImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shoeHeartIconContainer {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #8a898d;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: rgba(254, 200, 209, 0.429);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shoeHeartIcon {
+    color: #EA047E;
+    background-color: transparent;
+}
+
+.shoeLowerPart {
+    width: 100%;
+    height: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shoeAbout {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.shoeDesc {
+    width: 100%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 100;
+    color: #8a898d;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.shoeTitle {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bolder;
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.shoePrice {
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bolder;
+    color: #0014FF;
+}

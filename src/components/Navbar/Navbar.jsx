@@ -20,8 +20,10 @@ function Navbar() {
                     <img src={logoImg} alt="logo_img" />
                 </div>
 
-                <input type="text" name="user_search" id="user_search" />
-                <CiSearch className='searchIcon' />
+                <div className="userSearch">
+                    <input type="text" name="user_search" id="user_search" />
+                    <CiSearch className='searchIcon' />
+                </div>
             </div>
 
             <div className="middle">
@@ -29,7 +31,7 @@ function Navbar() {
                     <li>Home</li>
                     <li>
                         <select name="products" id="products">
-                            <option value="-" disabled>Products</option>
+                            <option value="-" disabled selected>Products</option>
                             <option value="Nike">Nike</option>
                             <option value="Adidas">Adidas</option>
                             <option value="Reebok">Reebok</option>
