@@ -6,6 +6,7 @@ import { AiOutlineHeart } from 'react-icons/ai';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import logoImg from '../../shoozy.jpg';
 import './Navbar.css';
+import RecordBox from '../RecordBox/RecordBox';
 
 
 
@@ -21,7 +22,7 @@ function Navbar() {
                 </div>
 
                 <div className="userSearch">
-                    <input type="text" name="user_search" id="user_search" />
+                    <input type="text" name="user_search" id="user_search" placeholder='Search Shoe' />
                     <CiSearch className='searchIcon' />
                 </div>
             </div>
@@ -51,12 +52,14 @@ function Navbar() {
                     </li>
                     <li><AiOutlineShoppingCart />
                         <span className='Count'>5</span>
+                        <RecordBox />
                     </li>
                 </ul>
 
                 <div className="navProfileImg">
                     <img src="https://i.scdn.co/image/ab6761610000e5ebd3b9cce395e9b88684af3a59" alt="profile_image" />
                 </div>
+
 
             </div>
 
