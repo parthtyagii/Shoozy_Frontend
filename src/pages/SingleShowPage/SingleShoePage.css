@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Anton&family=Bebas+Neue&family=Fjalla+One&family=Luckiest+Guy&family=Roboto&family=Titillium+Web:ital,wght@0,400;0,700;0,900;1,600&display=swap');
+
+
+
+
+.singleShoePageContainer {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.shoeImage {
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.shoeImage img {
+    width: 85%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.shoeDetails {
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    padding-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.shoeDetails .shoeAbout {
+    width: 100%;
+    height: auto;
+    background-color: beige;
+    margin-bottom: 20px;
+    font-family: 'Fjalla One', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.shoeDetails .shoeAbout h1 {
+    width: 100%;
+    height: auto;
+    font-weight: bolder;
+    font-size: 2.6rem;
+}
+
+.shoeDetails .shoeAbout .shoeInfo {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+/* .shoeDetails .shoePricing {
+
+} */
