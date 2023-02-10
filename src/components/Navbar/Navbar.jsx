@@ -52,14 +52,15 @@ function Navbar() {
                     </li>
                     <li><AiOutlineShoppingCart />
                         <span className='Count'>5</span>
-                        <RecordBox />
+                        
+                        {/* <RecordBox /> */}
+
                     </li>
                 </ul>
 
                 <div className="navProfileImg">
                     <img src="https://i.scdn.co/image/ab6761610000e5ebd3b9cce395e9b88684af3a59" alt="profile_image" />
                 </div>
-
 
             </div>
 

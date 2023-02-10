@@ -1,0 +1,87 @@
+.item {
+    width: 100%;
+    height: 80px;
+    /* background-color: darkkhaki; */
+    margin-bottom: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr 6fr 4fr;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.item .checkBox {
+    height: 16px;
+    width: 16px;
+}
+
+.item .itemImg {
+    width: 90px;
+    height: 70px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.item .itemImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.itemAbout {
+    width: 150px;
+    height: 70px;
+    /* background-color: darkseagreen; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.itemAbout .itemTitle {
+    width: 100%;
+    height: auto;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 18px;
+}
+
+.itemAbout .itemCount {
+    width: auto;
+    height: 20px;
+    /* background-color: white; */
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.itemCount button {
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+    border: 1px solid black;
+    background-color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemCount .count {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.itemPrice {
+    align-self: flex-start;
+    justify-self: flex-end;
+    margin-top: 5px;
+    font-size: 1.3rem;
+    font-weight: 900;
+}

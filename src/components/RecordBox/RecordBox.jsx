@@ -1,6 +1,7 @@
 import React from 'react';
 import './RecordBox.css';
 import Item from '../../banner.jpg';
+import CheckoutItem from '../CheckoutItem/CheckoutItem';
 
 
 
@@ -14,28 +15,10 @@ function RecordBox() {
 
             <div className="recordBoxMiddle">
 
-                <div className="item">
-
-                    <input type="checkbox" className='checkBox' />
-                    <div className="itemImg">
-                        <img src='https://pixlr.com/images/index/remove-bg.webp' alt="item_image" />
-                    </div>
-                    <div className="itemAbout">
-                        <div className="itemTitle">
-                            Nike React Pegasus Trail 4 Men's Running Shoes
-                        </div>
-
-                        <div className="itemCount">
-                            <button>+</button>
-                            <span className="count">3</span>
-                            <button>-</button>
-                        </div>
-                    </div>
-                    <div className="itemPrice">
-                        $12,000
-                    </div>
-
-                </div>
+                <CheckoutItem />
+                <CheckoutItem />
+                <CheckoutItem />
+                <CheckoutItem />
 
             </div>
 
