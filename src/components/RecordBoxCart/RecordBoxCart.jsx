@@ -1,11 +1,11 @@
 import React from 'react';
-import './RecordBox.css';
+import './RecordBoxCart.css';
 import Item from '../../banner.jpg';
 import CheckoutItem from '../CheckoutItem/CheckoutItem';
 
 
 
-function RecordBox() {
+function RecordBoxCart() {
     return (
         <div className='recordBoxContainer'>
 
@@ -42,4 +42,4 @@ function RecordBox() {
     );
 }
 
-export default RecordBox;
+export default RecordBoxCart;

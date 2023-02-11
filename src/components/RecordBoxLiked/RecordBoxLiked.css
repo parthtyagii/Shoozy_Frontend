@@ -1,0 +1,64 @@
+.recordBoxLikedContainer {
+    width: 420px;
+    height: auto;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.recordBoxLikedUpper {
+    width: 100%;
+    height: 50px;
+    /* background-color: darkgoldenrod; */
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.recordBoxLikedLower {
+    width: 100%;
+    min-height: 100px;
+    max-height: 300px;
+    overflow-y: auto;
+    font-family: 'Titillium Web', sans-serif;
+    /* background-color: darkcyan; */
+    margin-bottom: 15px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.recordBoxLikedLower::-webkit-scrollbar {
+    width: 0.2rem;
+    background-color: #F5F5F5;
+}
+
+.recordBoxLikedLower::-webkit-scrollbar-thumb {
+    background-color: #B2B2B2;
+}
+
+.recordBoxLikedLower::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}

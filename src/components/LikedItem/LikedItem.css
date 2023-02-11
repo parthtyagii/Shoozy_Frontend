@@ -1,9 +1,9 @@
-.item {
+.likedItem {
     width: 100%;
     height: 80px;
     margin-bottom: 20px;
     padding-top: 5px;
-    padding-bottom:5px;
+    padding-bottom: 5px;
 
     display: grid;
     grid-template-columns: 1fr 3fr 6fr 4fr;
@@ -11,26 +11,35 @@
     align-items: center;
 }
 
+.likedItem .likedItemRemove {
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
 
-.item .checkBox {
-    height: 16px;
-    width: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.item .itemImg {
+.likedItem .likedItemRemove .removeIcon{
+    color: #b5b4b4;
+    cursor: pointer;
+}
+
+.likedItem .likedItemImg {
     width: 90px;
     height: 80px;
     margin-left: 5px;
     margin-right: 5px;
 }
 
-.item .itemImg img {
+.likedItem .likedItemImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.itemAbout {
+.likedItemAbout {
     width: 150px;
     height: 80px;
     /* background-color: darkseagreen; */
@@ -41,7 +50,7 @@
     align-items: flex-start;
 }
 
-.itemAbout .itemTitle {
+.likedItemAbout .likedItemTitle {
     width: 100%;
     height: auto;
     font-size: 0.9rem;
@@ -51,51 +60,21 @@
     overflow-y: scroll;
 }
 
-.itemAbout .itemTitle::-webkit-scrollbar {
+.likedItemAbout .likedItemTitle::-webkit-scrollbar {
     width: 0em;
     background-color: #F5F5F5;
 }
 
-.itemAbout .itemTitle::-webkit-scrollbar-thumb {
+.likedItemAbout .likedItemTitle::-webkit-scrollbar-thumb {
     background-color: #B2B2B2;
 }
 
-.itemAbout .itemTitle::-webkit-scrollbar-track {
+.likedItemAbout .likedItemTitle::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #F5F5F5;
 }
 
-.itemAbout .itemCount {
-    width: auto;
-    height: 20px;
-    /* background-color: white; */
-    border: 1px solid black;
-    margin-top: 8px;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.itemCount button {
-    width: 20px;
-    height: 20px;
-    font-size: 1rem;
-    border: 1px solid black;
-    background-color: transparent;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.itemCount .count {
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 15px;
-}
-
-.itemPrice {
+.likedItemPrice {
     align-self: flex-start;
     justify-self: flex-end;
     margin-right: 2px;

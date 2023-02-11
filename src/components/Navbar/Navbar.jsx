@@ -6,7 +6,8 @@ import { AiOutlineHeart } from 'react-icons/ai';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import logoImg from '../../shoozy.jpg';
 import './Navbar.css';
-import RecordBox from '../RecordBox/RecordBox';
+import RecordBoxCart from '../RecordBoxCart/RecordBoxCart';
+import RecordBoxLiked from '../RecordBoxLiked/RecordBoxLiked';
 
 
 
@@ -49,11 +50,14 @@ function Navbar() {
                     <li><BsChatDots /></li>
                     <li><AiOutlineHeart />
                         <span className='Count'>5</span>
+
+                        {/* <RecordBoxLiked /> */}
+
                     </li>
                     <li><AiOutlineShoppingCart />
                         <span className='Count'>5</span>
                         
-                        {/* <RecordBox /> */}
+                        {/* <RecordBoxCart /> */}
 
                     </li>
                 </ul>

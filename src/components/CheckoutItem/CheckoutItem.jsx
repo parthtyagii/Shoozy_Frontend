@@ -11,7 +11,7 @@ function CheckoutItem() {
             </div>
             <div className="itemAbout">
                 <div className="itemTitle">
-                    Nike React Pegasus Trail 4 Men's Running Shoes
+                    Nike React Pegasus Trail 4 Men's Running Shoes 
                 </div>
 
                 <div className="itemCount">

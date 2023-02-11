@@ -1,7 +1,6 @@
 import React from 'react';
 import './Main.css';
 import Shoe from '../Shoe/Shoe';
-import RecordBox from '../RecordBox/RecordBox';
 
 
 
