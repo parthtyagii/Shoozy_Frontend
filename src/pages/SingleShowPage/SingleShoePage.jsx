@@ -1,5 +1,7 @@
 import React from 'react';
 import './SingleShoePage.css';
+import { BsTruck } from 'react-icons/bs';
+import { BiNotepad } from 'react-icons/bi';
 
 
 
@@ -42,6 +44,20 @@ function SingleShoePage() {
                 <div className="shoeBuyOrAdd">
                     <button className="Buy">But Now</button>
                     <button className="Add">Add to Cart</button>
+                </div>
+
+                <div className="customerService">
+                    <div className="delivery">
+                        <BsTruck className='deliveryIcon' />
+                        <h4>Free Delivery</h4>
+                        <div>Enter your Postal code for Delivery Availability</div>
+                    </div>
+
+                    <div className="delivery">
+                        <BiNotepad className='deliveryIcon' />
+                        <h4>Return Delivery</h4>
+                        <div>Free 30days Delivery Returns. <span>Details</span></div>
+                    </div>
                 </div>
 
             </div>
