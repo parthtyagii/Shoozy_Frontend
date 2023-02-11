@@ -21,7 +21,7 @@ function SingleShoePage() {
                 </div>
 
                 <div className="shoePricing">
-                    <h3>$12,000 or $500/month</h3>
+                    <h3>$6,000 or $500/month</h3>
                     <div className="shoePricingMessage">
                         Suggest payments with 12 months special financing
                     </div>
@@ -33,14 +33,14 @@ function SingleShoePage() {
                         <span>3</span>
                         <button>-</button>
                     </div>
-                    <div className="shoePairsLeft">
-                        Only 12 items left!
-                        Don't miss it
+                    <div className="shoePairsCountMessage">
+                        <span>Only 12 items left!</span>
+                        <span>Don't miss it</span>
                     </div>
                 </div>
 
-                <div className="shoeButOrADD">
-                    <button className="buy">But Now</button>
+                <div className="shoeBuyOrAdd">
+                    <button className="Buy">But Now</button>
                     <button className="Add">Add to Cart</button>
                 </div>
 
