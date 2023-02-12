@@ -4,7 +4,11 @@
     padding: 5px;
     border-bottom: 1px solid grey;
     font-family: 'Roboto', sans-serif;
-    /* background-color: antiquewhite; */
+    background-color: white;
+    
+    position: sticky;
+    top: 0;
+    z-index: 1;
 
     display: grid;
     grid-template-columns: 30% 45% 25%;
@@ -48,6 +52,10 @@
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: 600;
+}
+
+.leftPart #user_search:focus{
+    outline: none;
 }
 
 .searchIcon {

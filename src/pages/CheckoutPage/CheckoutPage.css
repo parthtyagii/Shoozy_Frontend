@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Anton&family=Bebas+Neue&family=Fjalla+One&family=Luckiest+Guy&family=Roboto:wght@100;300;400;500;700;900&family=Titillium+Web:ital,wght@0,400;0,700;0,900;1,600&display=swap');
+
+
+.checkoutPageContainer {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.checkoutPageLeftSide {
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkoutPageLeftSide .reviewAndShipping {
+    width: 90%;
+    min-height: auto;
+    border: 1px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.checkoutPageLeftSide .reviewAndShipping h2 {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkoutPageLeftSide .reviewAndShipping .checkoutPageItem {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviewAndShipping .checkoutPageItem .itemImg {
+    width: 150px;
+    height: 150px;
+}
+
+.reviewAndShipping .checkoutPageItem .itemImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.reviewAndShipping .checkoutPageItem .itemInfo {
+    width: 45%;
+    height: 150px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.reviewAndShipping .checkoutPageItem .itemInfo .itemTitle {
+    width: 100%;
+    height: auto;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.reviewAndShipping .checkoutPageItem .itemInfo .itemDesc {
+    width: 100%;
+    height: auto;
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.reviewAndShipping .checkoutPageItem .itemInfo .itemQty {
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkoutPageItem .itemInfo .itemQty .itemQtyButtons {
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkoutPageItem .itemInfo .itemQty .itemQtyButtons button {
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+    font-size: 0.7rem;
+    border: none;
+    border-radius: 2px;
+    background-color: rgb(236, 233, 233);
+    margin-top: 1px;
+    margin-bottom: 1px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviewAndShipping .checkoutPageItem .itemPricingInfo {
+    width: 27%;
+    height: 150px;
+    padding-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.reviewAndShipping .checkoutPageItem .removeItem {
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    background-color: white;
+    color: #bdbdbd;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
