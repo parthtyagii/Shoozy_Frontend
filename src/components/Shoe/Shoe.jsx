@@ -1,6 +1,7 @@
 import React from 'react';
 import './Shoe.css';
 import { AiFillHeart } from 'react-icons/ai';
+import { FiShoppingBag } from 'react-icons/fi';
 
 
 
@@ -15,7 +16,7 @@ function Shoe() {
                 </div>
 
                 <span className='shoeHeartIconContainer'>
-                    <AiFillHeart className='shoeHeartIcon'/>
+                    <AiFillHeart className='shoeHeartIcon' />
                 </span>
             </div>
 
@@ -31,6 +32,9 @@ function Shoe() {
 
                     <div className="shoePrice">
                         <span>$12,000</span>
+                        <span>
+                            <FiShoppingBag className='shoePriceIcon' />
+                        </span>
                     </div>
 
                 </div>

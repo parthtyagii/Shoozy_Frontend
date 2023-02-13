@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import RecordBoxCart from './components/RecordBoxCart/RecordBoxCart';
 import SingleShoePage from './pages/SingleShowPage/SingleShoePage';
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
+import Homepage from './pages/Homepage/Homepage';
 
 
 
@@ -13,11 +14,11 @@ function App() {
   return (
     <div className="App">
 
-      <Navbar />
+      {/* <Navbar /> */}
       {/* <Header /> */}
       {/* <Main /> */}
-      {/* <SingleShoePage /> */}
-
+      <Homepage />
+      <SingleShoePage />
       <CheckoutPage />
 
     </div>

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Anton&family=Bebas+Neue&family=Fjalla+One&family=Luckiest+Guy&family=Roboto:wght@100;300;400;500;700;900&family=Titillium+Web:ital,wght@0,400;0,700;0,900;1,600&display=swap');
+
+
+.recommendedShoesContainer {
+    width: 100%;
+    height: auto;
+    /* background-color: aquamarine; */
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.recommendedShoesContainer h3 {
+    width: 100%;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.recommendedShoesContainer .brandOptions {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.recommendedShoesContainer .brandOptions button {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: 1px solid #8a898d;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #a6a5a9;
+    background-color: transparent;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.brandOptions button:nth-of-type(1) {
+    background-color: #0014FF;
+    border: 1px solid #0014FF;
+    color: white;
+}
+
+.brandOptions button:hover{
+    background-color: #0014FF;
+    border: 1px solid #0014FF;
+    color: white;
+}

@@ -16,7 +16,7 @@ function SingleShoePage() {
             <div className="shoeDetails">
 
                 <div className="shoeAbout">
-                    <h1>Nike Shoe</h1>
+                    <h1>Nike React Pegasus Trail 4 Men's Running Shoes</h1>
                     <div className="shoeInfo">
                         Men's Running Windrunner Jacket
                     </div>
