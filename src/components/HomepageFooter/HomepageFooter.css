@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Anton&family=Bebas+Neue&family=Fjalla+One&family=Luckiest+Guy&family=Roboto:wght@100;300;400;500;700;900&family=Titillium+Web:ital,wght@0,400;0,700;0,900;1,600&display=swap');
+
+
+.homepageFooterContainer {
+    width: 100%;
+    height: auto;
+    padding: 2.5rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepageFooterContainer .services {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services .servicesAbout {
+    width: 350px;
+    height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.services .servicesAbout div {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.services .servicesAbout div:nth-of-type(1) {
+    height: 35%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px 10px 0 0;
+    background-color: #dddddd6e;
+}
+
+.services .servicesAbout div:nth-of-type(2) {
+    height: 65%;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+}
+
+.services .servicesAbout div h4 {
+    width: 75%;
+    height: auto;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    word-wrap: normal;
+}
+
+.services .servicesAbout div h4:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.services .servicesAbout div span {
+    width: 100%;
+    height: auto;
+    font-size: 0.8rem;
+}
+
+.services .servicesAbout div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 0 10px 10px;
+    transition: all 0.1s linear;
+}
+
+.services .servicesAbout div img:hover {
+    transform: scale(1.02);
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+.companyAbout {
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px solid #8a898d;
+    border-bottom: 1px solid #8a898d;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.companyAbout .leftSide {
+    width: 40%;
+    height: auto;
+    padding-right: 50px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.companyAbout .leftSide div {
+    width: 100%;
+    height: auto;
+}
+
+.companyAbout .leftSide div:nth-of-type(1) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.companyAbout .leftSide div:nth-of-type(1) img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.companyAbout .leftSide div:nth-of-type(1) h4 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.companyAbout .leftSide div:nth-of-type(2) {
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    color: #817878;
+}
+
+.companyAbout .leftSide div:nth-of-type(3) {
+    width: 60%;
+}
+
+.companyAbout .leftSide div:nth-of-type(3) h5 {
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.companyAbout .leftSide div:nth-of-type(3) span {
+    width: 50px;
+    height: 30px;
+    display: inline-block;
+    border: 1px solid #DDDDDD;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+.companyAbout .leftSide div:nth-of-type(3) span img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+
+.acceptedPaymentMethods:nth-of-type(2) {
+    padding: 3px;
+}
+
+.acceptedPaymentMethods:nth-of-type(4) img {
+    transform: scale(1.3);
+}
+
+/* --------------------------------------------------------------------------------------------------------- */
+
+.companyAbout .rightSide {
+    width: 60%;
+    height: 100%;
+    padding: 50px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.rightSide .companyInfo {
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.rightSide .companyInfo h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.rightSide .companyInfo ul {
+    list-style: none;
+    color: #817878;
+}
+
+.rightSide .companyInfo ul li {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.05s linear;
+}
+
+.rightSide .companyInfo ul li:hover {
+    transform: scale(1.02);
+    text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+
+.companyCopyright {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    color: black;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.companyCopyright ul {
+    list-style: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.companyCopyright ul li {
+    margin-right: 20px;
+    transition: all 0.05s linear;
+    cursor: pointer;
+}
+
+.companyCopyright ul li:hover {
+    transform: scale(1.02);
+    text-decoration: underline;
+}

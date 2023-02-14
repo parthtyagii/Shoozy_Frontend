@@ -9,7 +9,7 @@
     padding-bottom: 10px;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
-    margin-bottom: 300px;
+    margin-bottom: 30px;
 
     display: flex;
     flex-direction: column;
@@ -67,8 +67,24 @@
     height: auto;
     border-radius: 5px;
     margin-right: 20px;
-    transition: all 0.08s linear;
     background-color: black;
+    position: relative;
+    transition: all 0.08s linear;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.topbrandsContainer .shoeBrands div .brandName {
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 160px;
+    display: inline-block;
+    transform: scale(0);
+    font-family: 'Fjalla One', sans-serif;
 }
 
 .topbrandsContainer .shoeBrands div img {
@@ -76,7 +92,6 @@
     height: 350px;
     margin: 0;
     object-fit: cover;
-    /* border-radius: 5px; */
     margin-bottom: 0;
     display: block;
     transition: all 0.08s linear;
@@ -86,6 +101,28 @@
     transform: scale(1.05);
 }
 
-.topbrandsContainer .shoeBrands div img:hover {
-    opacity: 0.75;
+.topbrandsContainer .shoeBrands div:hover img:hover {
+    opacity: 0.5;
+}
+
+.topbrandsContainer .shoeBrands div:hover .brandName {
+
+    transform: scale(1.1);
+
+    animation-name: showBrandName;
+    animation-timing-function: linear;
+    animation-duration: 0.08s;
+    animation-fill-mode: both;
+}
+
+@keyframes showBrandName {
+
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+
+        transform: scale(1.1);
+    }
 }

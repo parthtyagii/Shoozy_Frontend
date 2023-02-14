@@ -19,30 +19,40 @@ function Topbrands() {
 
                 <div>
                     <img src={IMAGE1} alt="brand_image" />
+                    <span className="brandName">Nike</span>
                 </div>
 
                 <div>
                     <img src={IMAGE2} alt="brand_image" />
+                    <span className="brandName">Adidas</span>
+
                 </div>
 
                 <div>
                     <img src={IMAGE3} alt="brand_image" />
+                    <span className="brandName">Puma</span>
+
                 </div>
 
                 <div>
                     <img src={IMAGE4} alt="brand_image" />
+                    <span className="brandName">Vans</span>
+
                 </div>
 
                 <div>
                     <img src={IMAGE5} alt="brand_image" />
+                    <span className="brandName">Reebok</span>
                 </div>
 
                 <div>
                     <img src={IMAGE6} alt="brand_image" />
+                    <span className="brandName">Converse</span>
                 </div>
 
                 <div>
                     <img src={IMAGE7} alt="brand_image" />
+                    <span className="brandName">New Balance</span>
                 </div>
 
             </div>
