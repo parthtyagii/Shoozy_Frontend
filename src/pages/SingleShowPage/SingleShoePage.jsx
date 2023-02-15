@@ -3,10 +3,36 @@ import './SingleShoePage.css';
 import { BsTruck } from 'react-icons/bs';
 import { BiNotepad } from 'react-icons/bi';
 import Navbar from '../../components/Navbar/Navbar';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 
 function SingleShoePage() {
+
+    const { id } = useParams();
+    const [shoeInfo, setShoeInfo] = useState({});
+    const [price, setPrice] = useState('');
+
+    const getShoeInfo = async () => {
+        try {
+            const response = await axios.post('http://localhost:5000/shoesPrices', { data: id });
+            console.log(response.data);
+            setShoeInfo(response.data);
+        }
+        catch (e) {
+            console.log('cannot get shoe info!');
+            console.log(e);
+        }
+    }
+
+    useEffect(() => {
+
+        getShoeInfo();
+
+    }, [])
+
     return (
         <>
             <Navbar />
@@ -14,20 +40,20 @@ function SingleShoePage() {
             <div className='singleShoePageContainer'>
 
                 <div className="shoeImage">
-                    <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4cc0229f-6476-482e-bd73-0461ec464f7f/react-infinity-3-road-running-shoes-1W741N.png" alt="shoe_image" />
+                    <img src={shoeInfo.thumbnail} alt="shoe_image" />
                 </div>
 
                 <div className="shoeDetails">
 
                     <div className="shoeAbout">
-                        <h1>Nike React Pegasus Trail 4 Men's Running Shoes</h1>
+                        <h1>{shoeInfo.shoeName}</h1>
                         <div className="shoeInfo">
-                            Men's Running Windrunner Jacket
+                            {shoeInfo.description}
                         </div>
                     </div>
 
                     <div className="shoePricing">
-                        <h3>$6,000 or $500/month</h3>
+                        <h3>{`$${shoeInfo.retailPrice}`} or {`$${(shoeInfo.retailPrice / 12).toFixed(2)}/month`}</h3>
                         <div className="shoePricingMessage">
                             Suggest payments with 12 months special financing
                         </div>

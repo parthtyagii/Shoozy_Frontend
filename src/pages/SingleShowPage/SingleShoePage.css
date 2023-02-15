@@ -24,8 +24,9 @@
 .shoeImage img {
     width: 85%;
     height: 80%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px;
+    /* transform: scale(0.5); */
 }
 
 .shoeDetails {

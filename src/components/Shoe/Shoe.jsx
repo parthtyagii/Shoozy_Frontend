@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 
 
 
-function Shoe() {
+function Shoe({ title, desc, thumbnail, shoeId }) {
     return (
         <div className='shoeContainer'>
             <div className="shoeUpperPart">
                 <div className="shoeImg">
-                    <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4cc0229f-6476-482e-bd73-0461ec464f7f/react-infinity-3-road-running-shoes-1W741N.png" alt="shoe_image" />
+                    <img src={thumbnail} alt="shoe_image" />
                 </div>
 
                 <span className='shoeHeartIconContainer'>
@@ -23,13 +23,13 @@ function Shoe() {
 
             <div className="shoeLowerPart">
                 <div className="shoeAbout">
-                    <Link to='/shoe/321' className='link'>
+                    <Link to={`/shoe/${shoeId}`} className='link'>
                         <div className="shoeDesc">
-                            Men's Running Windrunner Jacket
+                            {/* {desc} */}
                         </div>
 
                         <div className="shoeTitle">
-                            Nike React Pegasus Trail 4 Men's Running Shoes
+                            {title}
                         </div>
                     </Link>
 
