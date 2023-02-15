@@ -39,8 +39,8 @@ function Navbar() {
                             <option value="Reebok">Reebok</option>
                         </select>
                     </li>
-                    <li>Promo</li>
                     <li>Contact us</li>
+                    <li>GitHub</li>
                 </ul>
             </div>
 

@@ -94,6 +94,7 @@
     padding-right: 15px;
     border-right: 1px solid grey;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .middle ul li:last-child {
@@ -136,6 +137,7 @@
     padding-right: 20px;
     font-size: 23px;
     position: relative;
+    cursor: pointer;
 }
 
 .right ul li:last-child {

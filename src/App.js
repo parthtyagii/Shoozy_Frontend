@@ -18,8 +18,8 @@ function App() {
       {/* <Header /> */}
       {/* <Main /> */}
       <Homepage />
-      <SingleShoePage />
-      <CheckoutPage />
+      {/* <SingleShoePage /> */}
+      {/* <CheckoutPage /> */}
 
     </div>
   );
