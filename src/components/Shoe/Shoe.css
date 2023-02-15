@@ -123,6 +123,11 @@
     align-items: center;
 }
 
+.shoeTitle:hover{
+    text-decoration: underline;
+    transform: scale(1.01);
+}
+
 .shoePrice {
     width: 100%;
     height: auto;

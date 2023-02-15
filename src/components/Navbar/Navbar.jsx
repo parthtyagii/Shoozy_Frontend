@@ -8,12 +8,23 @@ import logoImg from '../../shoozy.jpg';
 import './Navbar.css';
 import RecordBoxCart from '../RecordBoxCart/RecordBoxCart';
 import RecordBoxLiked from '../RecordBoxLiked/RecordBoxLiked';
-
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
 
 function Navbar() {
+
+    const [likedShoes, setLikedShoes] = useState(false);
+    const [cartShoes, setCartShoes] = useState(false);
+
+
+
+
+
+
+
     return (
         <div className="navContainer">
 
@@ -30,7 +41,9 @@ function Navbar() {
 
             <div className="middle">
                 <ul>
-                    <li>Home</li>
+                    <li>
+                        <Link to='/' className='link'>Home</Link>
+                    </li>
                     <li>
                         <select name="products" id="products">
                             <option value="-" disabled selected>Products</option>
@@ -48,16 +61,20 @@ function Navbar() {
                 <ul>
                     <li><BiBell /></li>
                     <li><BsChatDots /></li>
-                    <li><AiOutlineHeart />
+                    <li><AiOutlineHeart onClick={(e) => setLikedShoes(!likedShoes)} />
                         <span className='Count'>5</span>
 
-                        {/* <RecordBoxLiked /> */}
+                        {likedShoes &&
+                            <RecordBoxLiked />
+                        }
 
                     </li>
-                    <li><AiOutlineShoppingCart />
+                    <li><AiOutlineShoppingCart onClick={(e) => setCartShoes(!cartShoes)} />
                         <span className='Count'>5</span>
-                        
-                        {/* <RecordBoxCart /> */}
+
+                        {cartShoes &&
+                            <RecordBoxCart />
+                        }
 
                     </li>
                 </ul>

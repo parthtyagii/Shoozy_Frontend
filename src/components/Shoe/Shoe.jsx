@@ -2,6 +2,7 @@ import React from 'react';
 import './Shoe.css';
 import { AiFillHeart } from 'react-icons/ai';
 import { FiShoppingBag } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 
 
@@ -22,13 +23,15 @@ function Shoe() {
 
             <div className="shoeLowerPart">
                 <div className="shoeAbout">
-                    <div className="shoeDesc">
-                        Men's Running Windrunner Jacket
-                    </div>
+                    <Link to='/shoe/321' className='link'>
+                        <div className="shoeDesc">
+                            Men's Running Windrunner Jacket
+                        </div>
 
-                    <div className="shoeTitle">
-                        Nike React Pegasus Trail 4 Men's Running Shoes
-                    </div>
+                        <div className="shoeTitle">
+                            Nike React Pegasus Trail 4 Men's Running Shoes
+                        </div>
+                    </Link>
 
                     <div className="shoePrice">
                         <span>$12,000</span>
