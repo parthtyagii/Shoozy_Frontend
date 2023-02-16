@@ -15,10 +15,10 @@ function RecordBoxCart() {
 
             <div className="recordBoxMiddle">
 
+                {/* <CheckoutItem />
                 <CheckoutItem />
                 <CheckoutItem />
-                <CheckoutItem />
-                <CheckoutItem />
+                <CheckoutItem /> */}
 
             </div>
 

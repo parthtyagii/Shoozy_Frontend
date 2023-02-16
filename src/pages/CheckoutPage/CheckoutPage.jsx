@@ -45,7 +45,7 @@ function CheckoutPage() {
                             </div>
 
                             <button className='removeItem'>
-                                <i class="fa-solid fa-xmark"></i>
+                                <i className="fa-solid fa-xmark"></i>
                             </button>
                         </div>
 
@@ -58,12 +58,12 @@ function CheckoutPage() {
                         <h2>Delivery Information</h2>
 
                         <div className="customerName">
-                            <div class='customerInfo'>
+                            <div className='customerInfo'>
                                 <label>First Name *</label>
                                 <input type="text" name='firstName' placeholder='Type here...' />
                             </div>
 
-                            <div class='customerInfo'>
+                            <div className='customerInfo'>
                                 <label>Last Name *</label>
                                 <input type="text" name='lastName' placeholder='Type here...' />
                             </div>
@@ -75,24 +75,24 @@ function CheckoutPage() {
                         </div>
 
                         <div className="city">
-                            <div class='customerInfo'>
+                            <div className='customerInfo'>
                                 <label>City / Town *</label>
                                 <input type="text" name="city" placeholder='Type here...' />
                             </div>
 
-                            <div class='customerInfo'>
+                            <div className='customerInfo'>
                                 <label>Zip Code *</label>
                                 <input type="text" name="zip" placeholder='Type here...' />
                             </div>
                         </div>
 
                         <div className="customerId">
-                            <div class='customerInfo'>
+                            <div className='customerInfo'>
                                 <label>Mobile *</label>
                                 <input type="text" name="mobile" placeholder='Type here...' />
                             </div>
 
-                            <div class='customerInfo'>
+                            <div className='customerInfo'>
                                 <label>Email *</label>
                                 <input type="text" name="email" placeholder='Type here...' />
                             </div>
@@ -137,7 +137,7 @@ function CheckoutPage() {
                                 </div>
 
                                 <div>
-                                    <input type="radio" name='payment' value="creditDebit" id='4' checked='true' />
+                                    <input type="radio" name='payment' value="creditDebit" id='4' checked={true} />
                                     <label htmlFor='4'>Credit or Debit card</label>
                                 </div>
 
