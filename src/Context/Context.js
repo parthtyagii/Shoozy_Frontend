@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useReducer } from 'react';
 
 
-const initial_state = {
+let initial_state = {
     liked: [],
     cart: []
 }
@@ -12,12 +12,12 @@ const ShoesContext = createContext(initial_state);
 
 const ShoesContextProvider = ({ children }) => {
 
-    const [liked, setLiked] = useState();
-    const [cart, setCart] = useState();
+    let [LikedShoes, setLikedShoes] = useState([]);
+    let [CartShoes, setCartShoes] = useState([]);
 
 
     return (
-        <ShoesContext.Provider value={{ liked, setLiked, cart, setCart }}>
+        <ShoesContext.Provider value={{ LikedShoes, setLikedShoes, CartShoes, setCartShoes }}>
             {children}
         </ShoesContext.Provider>
     );

@@ -10,9 +10,73 @@ import { ShoesContext } from '../../Context/Context.js';
 
 function Shoe({ title, desc, thumbnail, shoeId }) {
 
-    const { liked, setLiked, cart, setCart } = useContext(ShoesContext);
-    const [heart, setHeart] = useState(false);
-    const [addCart, setAddCart] = useState(false);
+    let { LikedShoes, setLikedShoes, CartShoes, setCartShoes } = useContext(ShoesContext);
+    let [heart, setHeart] = useState(false);
+    let [addCart, setAddCart] = useState(false);
+
+
+    const clickedAddCart = () => {
+        if (!addCart) {
+            CartShoes = [...CartShoes, { id: shoeId, qty: 1 }];
+            setCartShoes(CartShoes);
+        }
+        else {
+            CartShoes = CartShoes.filter((c) => {
+                if (c.id !== shoeId) {
+                    return c;
+                }
+            });
+            setCartShoes(CartShoes);
+        }
+    }
+
+    const clickedAddLiked = () => {
+        if (!heart) {
+            LikedShoes = [...LikedShoes, { id: shoeId }];
+            setLikedShoes(LikedShoes);
+        }
+        else {
+            LikedShoes = LikedShoes.filter((c) => {
+                if (c.id !== shoeId) {
+                    return c;
+                }
+            });
+            setLikedShoes(LikedShoes);
+        }
+    }
+
+    useEffect(() => {
+
+        let cart_me_hai = false;
+        for (let i = 0; i < CartShoes.length; i++) {
+            if (CartShoes[i].id === shoeId) {
+                cart_me_hai = true;
+            }
+        }
+        if (cart_me_hai) {
+            setAddCart(true);
+        }
+        else {
+            setAddCart(false);
+        }
+        console.log(CartShoes);
+
+
+        let liked_hai = false;
+        for (let i = 0; i < LikedShoes.length; i++) {
+            if (LikedShoes[i].id === shoeId) {
+                liked_hai = true;
+            }
+        }
+        if (liked_hai) {
+            setHeart(true);
+        }
+        else {
+            setHeart(false);
+        }
+
+    }, [CartShoes, LikedShoes]);
+
 
     return (
         <div className='shoeContainer'>
@@ -21,7 +85,7 @@ function Shoe({ title, desc, thumbnail, shoeId }) {
                     <img src={thumbnail} alt="shoe_image" />
                 </div>
 
-                <span style={heart ? { backgroundColor: '#f43fa026', border: '1px solid #f43fa026' } : {}} onClick={(e) => { setHeart(!heart) }} className='shoeHeartIconContainer'>
+                <span onClick={clickedAddLiked} style={heart ? { backgroundColor: '#f43fa026', border: '1px solid #f43fa026' } : {}} className='shoeHeartIconContainer'>
                     <AiFillHeart style={heart ? { color: '#f40785' } : {}} className='shoeHeartIcon' />
                 </span>
             </div>
@@ -40,15 +104,15 @@ function Shoe({ title, desc, thumbnail, shoeId }) {
 
                     <div className="shoePrice">
                         <span>$12,000</span>
-                        <span onClick={(e) => { setAddCart(!addCart) }} style={addCart ? { backgroundColor: '#0014FF', color: 'white', border: '1px solid #0014FF' } : {}}>
-                            <FiShoppingBag onClick={(e) => { setAddCart(!addCart) }} className='shoePriceIcon' />
+                        <span onClick={clickedAddCart} style={addCart ? { backgroundColor: '#0014FF', color: 'white', border: '1px solid #0014FF' } : {}}>
+                            <FiShoppingBag className='shoePriceIcon' />
                         </span>
                     </div>
 
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 }
 

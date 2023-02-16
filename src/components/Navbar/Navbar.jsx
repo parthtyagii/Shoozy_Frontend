@@ -46,7 +46,7 @@ function Navbar() {
                     </li>
                     <li>
                         <select name="products" id="products">
-                            <option value="-" selected>Products</option>
+                            <option value="-">Products</option>
                             <option value="Nike">Nike</option>
                             <option value="Adidas">Adidas</option>
                             <option value="Reebok">Reebok</option>
