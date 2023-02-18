@@ -175,9 +175,14 @@
     transition: transform 0.1s;
 }
 
+.reviewAndShipping .checkoutPageItem .removeItem:hover {
+    background-color: #f6f2f2;
+}
+
 .reviewAndShipping .checkoutPageItem .removeItem:active {
     transform: scale(0.9);
-    background-color: #efebeb;
+    background-color: #e0dddd;
+    color: #918d8d;
 }
 
 /* -------------------------------------------------------------------------------------- */

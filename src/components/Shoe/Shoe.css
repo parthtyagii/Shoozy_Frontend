@@ -50,7 +50,7 @@
     top: 8px;
     right: 8px;
     cursor: pointer;
-    transition: all 0.1s linear;
+    transition: all 0.0.05s linear;
 
     display: flex;
     justify-content: center;
@@ -58,11 +58,11 @@
 }
 
 .shoeHeartIconContainer .shoeHeartIcon {
-    transition: all 0.1s linear;
+    transition: all 0.05s linear;
     color: #c6c5cb;
 }
 
-.shoeHeartIconContainer .shoeHeartIcon:hover {
+.shoeHeartIconContainer:hover .shoeHeartIcon {
     color: #f40785;
 }
 
@@ -150,7 +150,7 @@
     border-radius: 3px;
     color: #a6a5a9;
     cursor: pointer;
-    transition: all 0.1s linear;
+    transition: all 0.05s linear;
 
     display: flex;
     justify-content: center;

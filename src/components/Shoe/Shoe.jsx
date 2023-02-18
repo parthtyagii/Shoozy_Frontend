@@ -8,7 +8,7 @@ import { ShoesContext } from '../../Context/Context.js';
 
 
 
-function Shoe({ title, desc, thumbnail, shoeId }) {
+function Shoe({ title, desc, thumbnail, shoeId, price }) {
 
     let { LikedShoes, setLikedShoes, CartShoes, setCartShoes } = useContext(ShoesContext);
     let [heart, setHeart] = useState(false);
@@ -17,12 +17,12 @@ function Shoe({ title, desc, thumbnail, shoeId }) {
 
     const clickedAddCart = () => {
         if (!addCart) {
-            CartShoes = [...CartShoes, { id: shoeId, qty: 1 }];
+            CartShoes = [...CartShoes, { shoeId, title, desc, price, thumbnail, qty: 1 }];
             setCartShoes(CartShoes);
         }
         else {
             CartShoes = CartShoes.filter((c) => {
-                if (c.id !== shoeId) {
+                if (c.shoeId !== shoeId) {
                     return c;
                 }
             });
@@ -32,12 +32,12 @@ function Shoe({ title, desc, thumbnail, shoeId }) {
 
     const clickedAddLiked = () => {
         if (!heart) {
-            LikedShoes = [...LikedShoes, { id: shoeId }];
+            LikedShoes = [...LikedShoes, { shoeId }];
             setLikedShoes(LikedShoes);
         }
         else {
             LikedShoes = LikedShoes.filter((c) => {
-                if (c.id !== shoeId) {
+                if (c.shoeId !== shoeId) {
                     return c;
                 }
             });
@@ -49,7 +49,7 @@ function Shoe({ title, desc, thumbnail, shoeId }) {
 
         let cart_me_hai = false;
         for (let i = 0; i < CartShoes.length; i++) {
-            if (CartShoes[i].id === shoeId) {
+            if (CartShoes[i].shoeId === shoeId) {
                 cart_me_hai = true;
             }
         }
@@ -59,12 +59,12 @@ function Shoe({ title, desc, thumbnail, shoeId }) {
         else {
             setAddCart(false);
         }
-        console.log(CartShoes);
-
+        
+        // console.log(CartShoes);
 
         let liked_hai = false;
         for (let i = 0; i < LikedShoes.length; i++) {
-            if (LikedShoes[i].id === shoeId) {
+            if (LikedShoes[i].shoeId === shoeId) {
                 liked_hai = true;
             }
         }
@@ -74,6 +74,7 @@ function Shoe({ title, desc, thumbnail, shoeId }) {
         else {
             setHeart(false);
         }
+
 
     }, [CartShoes, LikedShoes]);
 
@@ -103,7 +104,7 @@ function Shoe({ title, desc, thumbnail, shoeId }) {
                     </Link>
 
                     <div className="shoePrice">
-                        <span>$12,000</span>
+                        <span>${price}</span>
                         <span onClick={clickedAddCart} style={addCart ? { backgroundColor: '#0014FF', color: 'white', border: '1px solid #0014FF' } : {}}>
                             <FiShoppingBag className='shoePriceIcon' />
                         </span>

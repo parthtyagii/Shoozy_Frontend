@@ -3,7 +3,7 @@
     height: 80px;
     margin-bottom: 20px;
     padding-top: 5px;
-    padding-bottom:5px;
+    padding-bottom: 5px;
 
     display: grid;
     grid-template-columns: 1fr 3fr 6fr 4fr;
@@ -12,9 +12,28 @@
 }
 
 
-.item .checkBox {
-    height: 16px;
-    width: 16px;
+.item .cartItemRemove {
+    height: auto;
+    width: auto;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    padding: 2px;
+    color: #b5b4b4;
+    cursor: pointer;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item .cartItemRemove:hover {
+    background-color: #f6f2f2;
+}
+
+.item .cartItemRemove:active {
+    background-color: #e0dddd;
+    color: #918d8d;
 }
 
 .item .itemImg {
@@ -27,7 +46,7 @@
 .item .itemImg img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .itemAbout {
@@ -49,6 +68,11 @@
     font-family: 'Titillium Web', sans-serif;
     line-height: 18px;
     overflow-y: scroll;
+}
+
+.itemAbout .itemTitle:hover {
+    text-decoration: underline;
+    transform: scale(1.01);
 }
 
 .itemAbout .itemTitle::-webkit-scrollbar {
@@ -83,6 +107,7 @@
     font-size: 1rem;
     border: 1px solid black;
     background-color: transparent;
+    cursor: pointer;
 
     display: flex;
     justify-content: center;

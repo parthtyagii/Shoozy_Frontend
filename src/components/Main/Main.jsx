@@ -16,25 +16,13 @@ function Main({ allShoes }) {
                 {allShoes &&
                     allShoes.map((s) => {
                         return (
-                            <Shoe key={s._id} title={s.shoeName} desc={s.description} thumbnail={s.thumbnail} shoeId={s.styleID} />
+                            <Shoe key={s._id} title={s.shoeName} desc={s.description} thumbnail={s.thumbnail} shoeId={s.styleID} price={s.retailPrice} />
                         );
                     })
                 }
 
 
             </main>
-
-            {/* <div className="paginationContainer">
-                <div className="pagination">
-                    <BiChevronLeft className='pageIcon' />
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                    <BiChevronRight className='pageIcon' />
-                </div>
-            </div> */}
         </>
     );
 }
