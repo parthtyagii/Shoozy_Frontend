@@ -50,8 +50,16 @@ function Navbar() {
                             <option value="Reebok">Reebok</option>
                         </select>
                     </li>
-                    <li>Contact us</li>
-                    <li>GitHub</li>
+                    <li>
+                        <a href='https://www.linkedin.com/in/parth-tyagi-0724a81b7/' className='link'>
+                            Contact us
+                        </a>
+                    </li>
+                    <li>
+                        <a href='https://github.com/parthtyagii?tab=overview&from=2022-06-01&to=2022-06-20' className='link'>
+                            GitHub
+                        </a>
+                    </li>
                 </ul>
             </div>
 

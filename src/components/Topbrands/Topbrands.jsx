@@ -7,13 +7,16 @@ import IMAGE4 from '../../brandImages/vans_logo.jpg';
 import IMAGE5 from '../../brandImages/reebok_logo1.png';
 import IMAGE6 from '../../brandImages/converse_logo.jpg';
 import IMAGE7 from '../../brandImages/newbalance_logo1.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 
 
 
 function Topbrands() {
     return (
-        <div className='topbrandsContainer'>
+        <div className='topbrandsContainer' data-aos="fade-up" data-aos-duration="1000">
             <h3>Top Brands</h3>
             <div className="shoeBrands">
 

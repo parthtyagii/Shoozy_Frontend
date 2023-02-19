@@ -1,6 +1,9 @@
 import React from 'react';
 import './HomepageFooter.css';
 import Logo from '../../shoozy.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 
 
@@ -9,7 +12,7 @@ import Logo from '../../shoozy.jpg';
 function HomepageFooter() {
     return (
         <div className='homepageFooterContainer'>
-            <div className="services">
+            <div className="services" >
                 <div className='servicesAbout'>
                     <div>
                         <h4>Frequently Asked Questions</h4>

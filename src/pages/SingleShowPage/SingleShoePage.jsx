@@ -9,7 +9,13 @@ import axios from 'axios';
 import { ShoesContext } from '../../Context/Context';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import SyncLoader from "react-spinners/SyncLoader";
 
+// const override: React.CSSProperties = {
+//   display: "block",
+//   margin: "0 auto",
+//   borderColor: "red",
+// };
 
 
 function SingleShoePage() {
@@ -19,6 +25,7 @@ function SingleShoePage() {
     const { id } = useParams();
     const [shoeInfo, setShoeInfo] = useState({});
     const [present, setPresent] = useState(false);
+    const [loading, setLoading] = useState(true);
 
 
     const addToCart = () => {
@@ -60,7 +67,10 @@ function SingleShoePage() {
         try {
             const response = await axios.post('http://localhost:5000/shoesPrices', { data: id });
             // console.log(response.data);
-            setShoeInfo({ shoeId: id, title: response.data.shoeName, desc: response.data.description, price: response.data.retailPrice, thumbnail: response.data.thumbnail, qty: 1 });
+            setTimeout(() => {
+                setShoeInfo({ shoeId: id, title: response.data.shoeName, desc: response.data.description, price: response.data.retailPrice, thumbnail: response.data.thumbnail, qty: 1 });
+                setLoading(false);
+            }, 3000);
         }
         catch (e) {
             console.log('cannot get shoe info!');

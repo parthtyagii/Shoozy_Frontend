@@ -2,8 +2,10 @@ import React from 'react';
 import './RecommendedShoes.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
-
+import { useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 function RecommendedShoes({ setAllShoes }) {
 
@@ -11,12 +13,10 @@ function RecommendedShoes({ setAllShoes }) {
         try {
             if (targetName !== 'all') {
                 const response = await axios.post('http://localhost:5000/shoes', { data: targetName });
-                // console.log(response.data);
                 setAllShoes(response.data);
             }
             else {
                 const response = await axios.get('http://localhost:5000/shoesPopular', { data: targetName });
-                // console.log(response.data);
                 setAllShoes(response.data);
             }
         }
@@ -26,9 +26,8 @@ function RecommendedShoes({ setAllShoes }) {
         }
     }
 
-
     return (
-        <div className='recommendedShoesContainer'>
+        <div className='recommendedShoesContainer' data-aos="fade-up" data-aos-duration="1000">
             <h3>Recommeded Shoes</h3>
             <div className="brandOptions">
                 <button name='all' onClick={(e) => getBrandShoes(e.target.name)}>All Products</button>

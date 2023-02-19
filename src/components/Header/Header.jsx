@@ -2,31 +2,21 @@ import React from 'react';
 import './Header.css';
 import Banner from '../../banner.jpg';
 import { useState, useEffect } from 'react';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 
 
 function Header() {
 
-    const [image, setImage] = useState(null);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setImage(Banner);
-        }, 1500);
-    }, []);
-
     return (
         <div className="headerContainer">
-            {!image &&
-                <div className="banner skeleton"></div>
-            }
 
-            {image &&
-                <div className="banner">
-                    <img src={image} alt="banner_image" />
-                </div>
-            }
+            <div className="banner" data-aos="fade-up" data-aos-duration="1050">
+                <img src={Banner} alt="banner_image" />
+            </div>
+            
         </div>
     );
 }

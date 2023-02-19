@@ -306,3 +306,16 @@
     left: 18px;
     color: #F49D1A;
 }
+
+.loader {
+    width: 100vw;
+    height: 88vh;
+
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
