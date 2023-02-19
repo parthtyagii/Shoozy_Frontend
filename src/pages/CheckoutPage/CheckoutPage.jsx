@@ -184,12 +184,12 @@ function CheckoutPage() {
                         <div className="billingAmount">
                             <div>
                                 <span>Sub Total</span>
-                                <span>${totalBill}</span>
+                                <span>${(totalBill).toFixed(2)}</span>
                             </div>
 
                             <div>
                                 <span>Tax (10%)</span>
-                                <span>-${totalBill / 10}</span>
+                                <span>-${(totalBill / 10).toFixed(2)}</span>
                             </div>
 
                             <div>
@@ -199,17 +199,17 @@ function CheckoutPage() {
 
                             <div>
                                 <span>Shipping Cost</span>
-                                <span>-${totalBill / 8}</span>
+                                <span>-${(totalBill / 8).toFixed(2)}</span>
                             </div>
 
                             <div>
                                 <span>Total</span>
-                                <span>=${(totalBill) + (totalBill / 10) + (totalBill / 8)}</span>
+                                <span>=${((totalBill) + (totalBill / 10) + (totalBill / 8)).toFixed(2)}</span>
                             </div>
                         </div>
 
                         <div className="orderPay">
-                            <button className="pay">Pay ${(totalBill) + (totalBill / 10) + (totalBill / 8)}</button>
+                            <button className="pay">Pay ${((totalBill) + (totalBill / 10) + (totalBill / 8)).toFixed(2)}</button>
                         </div>
 
                     </div>
