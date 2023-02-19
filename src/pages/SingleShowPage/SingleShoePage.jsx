@@ -9,13 +9,11 @@ import axios from 'axios';
 import { ShoesContext } from '../../Context/Context';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import SyncLoader from "react-spinners/SyncLoader";
+import BeatLoader from "react-spinners/BeatLoader";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
-// const override: React.CSSProperties = {
-//   display: "block",
-//   margin: "0 auto",
-//   borderColor: "red",
-// };
 
 
 function SingleShoePage() {
@@ -26,14 +24,15 @@ function SingleShoePage() {
     const [shoeInfo, setShoeInfo] = useState({});
     const [present, setPresent] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [showMessage, setShowMessage] = useState(false);
 
 
     const addToCart = () => {
         if (!present) {
             CartShoes = [...CartShoes, { shoeId: id, title: shoeInfo.title, desc: shoeInfo.desc, price: shoeInfo.price, thumbnail: shoeInfo.thumbnail, qty: 1 }]
             // console.log(CartShoes);
-            setCartShoes(CartShoes);
             setPresent(true);
+            setCartShoes(CartShoes);
         }
     }
 
@@ -48,6 +47,12 @@ function SingleShoePage() {
             })
             setCartShoes(CartShoes);
         }
+        else {
+            setShowMessage(true);
+            setTimeout(() => {
+                setShowMessage(false);
+            }, 2000);
+        }
     }
 
     const moreShoes = () => {
@@ -60,6 +65,12 @@ function SingleShoePage() {
                 return c;
             });
             setCartShoes(CartShoes);
+        }
+        else {
+            setShowMessage(true);
+            setTimeout(() => {
+                setShowMessage(false);
+            }, 2000);
         }
     }
 
@@ -109,64 +120,80 @@ function SingleShoePage() {
         <>
             <Navbar />
 
-            <div className='singleShoePageContainer'>
-
-                <div className="shoeImage">
-                    <img src={shoeInfo.thumbnail} alt="shoe_image" />
+            {loading &&
+                <div className="loader">
+                    <BeatLoader color="#0014FF" />
                 </div>
+            }
 
-                <div className="shoeDetails">
+            {!loading &&
 
-                    <div className="shoeAbout">
-                        <h1>{shoeInfo.title}</h1>
-                        <div className="shoeInfo">
-                            {shoeInfo.desc}
-                        </div>
+                <div className='singleShoePageContainer' data-aos="fade-up" data-aos-duration="1000">
+
+                    <div className="shoeImage">
+                        <img src={shoeInfo.thumbnail} alt="shoe_image" />
                     </div>
 
-                    <div className="shoePricing">
-                        <h3>{`$${shoeInfo.price}`} or {`$${(shoeInfo.price / 12).toFixed(2)}/month`}</h3>
-                        <div className="shoePricingMessage">
-                            Suggest payments with 12 months special financing
-                        </div>
-                    </div>
+                    <div className="shoeDetails">
 
-                    <div className="shoePairs">
-                        <div className="shoePairsCount">
-                            <button onClick={moreShoes}>+</button>
-                            <span>{present ? shoeInfo.qty : 0}</span>
-                            <button onClick={lessShoes}>-</button>
-                        </div>
-                        <div className="shoePairsCountMessage">
-                            <span>Only 12 items left!</span>
-                            <span>Don't miss it</span>
-                        </div>
-                    </div>
-
-                    <div className="shoeBuyOrAdd">
-                        <Link to='/checkout' className='link'>
-                            <button className="Buy">But Now</button>
-                        </Link>
-                        <button className="Add" onClick={addToCart}>Add to Cart</button>
-                    </div>
-
-                    <div className="customerService">
-                        <div className="delivery">
-                            <BsTruck className='deliveryIcon' />
-                            <h4>Free Delivery</h4>
-                            <div>Enter your Postal code for Delivery Availability</div>
+                        <div className="shoeAbout">
+                            <h1>{shoeInfo.title}</h1>
+                            <div className="shoeInfo">
+                                {shoeInfo.desc}
+                            </div>
                         </div>
 
-                        <div className="delivery">
-                            <BiNotepad className='deliveryIcon' />
-                            <h4>Return Delivery</h4>
-                            <div>Free 30days Delivery Returns. <span>Details</span></div>
+                        <div className="shoePricing">
+                            <h3>{`$${shoeInfo.price}`} or {`$${(shoeInfo.price / 12).toFixed(2)}/month`}</h3>
+                            <div className="shoePricingMessage">
+                                Suggest payments with 12 months special financing
+                            </div>
                         </div>
+
+                        <div className="shoePairs">
+                            <div className="shoePairsCount">
+                                <button onClick={moreShoes}>+</button>
+                                <span>{present ? shoeInfo.qty : 0}</span>
+                                <button onClick={lessShoes}>-</button>
+                            </div>
+                            <div className="shoePairsCountMessage">
+                                <span>Only 12 items left!</span>
+                                <span>Don't miss it</span>
+                            </div>
+                        </div>
+
+                        <div className="shoeBuyOrAdd">
+                            <Link to='/checkout' className='link'>
+                                <button className="Buy">But Now</button>
+                            </Link>
+                            <button className="Add" onClick={addToCart}>Add to Cart</button>
+                        </div>
+
+                        <div className="customerService">
+                            <div className="delivery">
+                                <BsTruck className='deliveryIcon' />
+                                <h4>Free Delivery</h4>
+                                <div>Enter your Postal code for Delivery Availability</div>
+                            </div>
+
+                            <div className="delivery">
+                                <BiNotepad className='deliveryIcon' />
+                                <h4>Return Delivery</h4>
+                                <div>Free 30days Delivery Returns. <span>Details</span></div>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
+            }
 
-            </div>
+            {showMessage &&
+                <div className="message">
+                    First add to cart!
+                </div>
+            }
+
         </>
     );
 }
