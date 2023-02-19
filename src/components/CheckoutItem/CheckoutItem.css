@@ -123,7 +123,7 @@
 .itemPrice {
     align-self: flex-start;
     justify-self: flex-end;
-    margin-right: 2px;
+    margin-right: 8px;
     font-size: 1.3rem;
     font-weight: 600;
 }

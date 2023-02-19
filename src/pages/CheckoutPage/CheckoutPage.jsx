@@ -1,14 +1,30 @@
 import React from 'react';
 import './CheckoutPage.css';
+import Navbar from '../../components/Navbar/Navbar';
 import { AiFillCaretDown } from 'react-icons/ai';
 import { AiFillCaretUp } from 'react-icons/ai';
-import Navbar from '../../components/Navbar/Navbar';
+import { ShoesContext } from '../../Context/Context';
+import { useContext, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import CheckoutPageItem from '../../components/CheckoutPageItem/CheckoutPageItem';
 
 
 
 
 
 function CheckoutPage() {
+
+    let { CartShoes, setCartShoes } = useContext(ShoesContext);
+    let [totalBill, setTotalBill] = useState(0);
+
+    useEffect(() => {
+        let t = 0;
+        for (let i = 0; i < CartShoes.length; i++) {
+            t = t + (CartShoes[i].price * CartShoes[i].qty);
+        }
+        setTotalBill(t);
+    }, [CartShoes])
+
     return (
         <>
             <Navbar />
@@ -23,30 +39,16 @@ function CheckoutPage() {
 
                         <h2>Review Item and Shipping</h2>
 
-                        <div className="checkoutPageItem">
-                            <div className="itemImg">
-                                <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4cc0229f-6476-482e-bd73-0461ec464f7f/react-infinity-3-road-running-shoes-1W741N.png" alt="item_image" />
-                            </div>
+                        <div className="lowerPart">
 
-                            <div className="itemInfo">
-                                <div className="itemTitle">Nike React Pegasus Trail 4 Men's Running Shoes</div>
-                                <div className="itemDesc">Men's Running Windrunner Jacket</div>
-                                <div className="itemQty">
-                                    Qty : 3
-                                    <div className="itemQtyButtons">
-                                        <button><AiFillCaretUp /></button>
-                                        <button><AiFillCaretDown /></button>
-                                    </div>
-                                </div>
-                            </div>
+                            {(CartShoes.length > 0) &&
+                                CartShoes.map((c) => {
+                                    return (
+                                        <CheckoutPageItem key={c.shoeId} shoeId={c.shoeId} title={c.title} price={c.price} qty={c.qty} thumbnail={c.thumbnail} />
+                                    );
+                                })
+                            }
 
-                            <div className="itemPricingInfo">
-                                $12,000
-                            </div>
-
-                            <button className='removeItem'>
-                                <i className="fa-solid fa-xmark"></i>
-                            </button>
                         </div>
 
                     </div>
@@ -137,7 +139,7 @@ function CheckoutPage() {
                                 </div>
 
                                 <div>
-                                    <input type="radio" name='payment' value="creditDebit" id='4' checked={true} />
+                                    <input type="radio" name='payment' value="creditDebit" id='4' />
                                     <label htmlFor='4'>Credit or Debit card</label>
                                 </div>
 
@@ -182,32 +184,32 @@ function CheckoutPage() {
                         <div className="billingAmount">
                             <div>
                                 <span>Sub Total</span>
-                                <span>$549</span>
+                                <span>${totalBill}</span>
                             </div>
 
                             <div>
                                 <span>Tax (10%)</span>
-                                <span>-$54</span>
+                                <span>-${totalBill / 10}</span>
                             </div>
 
                             <div>
                                 <span>Coupon Discount</span>
-                                <span>-$54</span>
-                            </div>
-
-                            <div>
-                                <span>Shipping Cost</span>
                                 <span>-$0</span>
                             </div>
 
                             <div>
+                                <span>Shipping Cost</span>
+                                <span>-${totalBill / 8}</span>
+                            </div>
+
+                            <div>
                                 <span>Total</span>
-                                <span>=$449</span>
+                                <span>=${(totalBill) + (totalBill / 10) + (totalBill / 8)}</span>
                             </div>
                         </div>
 
                         <div className="orderPay">
-                            <button className="pay">Pay $449</button>
+                            <button className="pay">Pay ${(totalBill) + (totalBill / 10) + (totalBill / 8)}</button>
                         </div>
 
                     </div>

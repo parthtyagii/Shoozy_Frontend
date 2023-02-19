@@ -7,6 +7,7 @@
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    cursor: default;
 
     position: absolute;
     top: 40px;
@@ -55,7 +56,7 @@
 }
 
 .recordBoxLikedLower::-webkit-scrollbar-thumb {
-    background-color: #B2B2B2;
+    background-color: #757373;
 }
 
 .recordBoxLikedLower::-webkit-scrollbar-track {

@@ -4,6 +4,7 @@ import Item from '../../banner.jpg';
 import CheckoutItem from '../CheckoutItem/CheckoutItem';
 import { ShoesContext } from '../../Context/Context';
 import { useState, useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -50,9 +51,11 @@ function RecordBoxCart() {
             </div>
 
             <div className="checkout">
-                {(totalPrice !== 0) &&
-                    <button>CHECKOUT NOW</button>
-                }
+                <Link to='/checkout' className='link'>
+                    {(totalPrice !== 0) &&
+                        <button>CHECKOUT NOW</button>
+                    }
+                </Link>
             </div>
 
         </div>

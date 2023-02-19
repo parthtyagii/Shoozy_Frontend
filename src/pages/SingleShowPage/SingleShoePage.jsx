@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ShoesContext } from '../../Context/Context';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -133,7 +134,9 @@ function SingleShoePage() {
                     </div>
 
                     <div className="shoeBuyOrAdd">
-                        <button className="Buy">But Now</button>
+                        <Link to='/checkout' className='link'>
+                            <button className="Buy">But Now</button>
+                        </Link>
                         <button className="Add" onClick={addToCart}>Add to Cart</button>
                     </div>
 

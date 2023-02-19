@@ -1,0 +1,130 @@
+.checkoutPageItem {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkoutPageItem .itemImg {
+    width: 150px;
+    height: 150px;
+}
+
+.checkoutPageItem .itemImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.checkoutPageItem .itemInfo {
+    width: 45%;
+    height: 150px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.checkoutPageItem .itemInfo .itemTitle {
+    width: auto;
+    height: auto;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    transition: all;
+}
+
+.checkoutPageItem .itemInfo .itemTitle:hover{
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+
+.checkoutPageItem .itemInfo .itemQty {
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkoutPageItem .itemInfo .itemQty .itemQtyButtons {
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkoutPageItem .itemInfo .itemQty .itemQtyButtons button {
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+    font-size: 0.7rem;
+    border: none;
+    border-radius: 2px;
+    background-color: rgb(236, 233, 233);
+    margin-top: 1px;
+    margin-bottom: 1px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkoutPageItem .itemPricingInfo {
+    width: 27%;
+    height: 150px;
+    padding-bottom: 22px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.checkoutPageItem .removeItem {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    color: #bdbdbd;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.checkoutPageItem .removeItem:hover {
+    background-color: #f6f2f2;
+}
+
+.checkoutPageItem .removeItem:active {
+    transform: scale(0.9);
+    background-color: #e0dddd;
+    color: #918d8d;
+}
