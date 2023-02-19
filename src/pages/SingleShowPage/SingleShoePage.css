@@ -255,10 +255,15 @@
 }
 
 .customerService .delivery h4 {
-    width: 100%;
+    width: auto;
     font-size: 1rem;
     letter-spacing: 1px;
     margin-bottom: 5px;
+}
+
+.customerService .delivery h4:hover {
+    transform: scale(1.01);
+    text-decoration: underline;
 }
 
 .customerService .delivery div {

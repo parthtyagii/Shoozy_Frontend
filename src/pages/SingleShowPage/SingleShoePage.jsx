@@ -6,20 +6,60 @@ import Navbar from '../../components/Navbar/Navbar';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { ShoesContext } from '../../Context/Context';
+import { useContext } from 'react';
 
 
 
 function SingleShoePage() {
 
+    let { CartShoes, setCartShoes } = useContext(ShoesContext);
+
     const { id } = useParams();
     const [shoeInfo, setShoeInfo] = useState({});
-    const [price, setPrice] = useState('');
+    const [present, setPresent] = useState(false);
+
+
+    const addToCart = () => {
+        if (!present) {
+            CartShoes = [...CartShoes, { shoeId: id, title: shoeInfo.title, desc: shoeInfo.desc, price: shoeInfo.price, thumbnail: shoeInfo.thumbnail, qty: 1 }]
+            // console.log(CartShoes);
+            setCartShoes(CartShoes);
+            setPresent(true);
+        }
+    }
+
+    const lessShoes = () => {
+        if (present) {
+            CartShoes = CartShoes.filter((c) => {
+                if ((c.shoeId === id) && (c.qty > 1)) {
+                    c.qty -= 1;
+                    setShoeInfo(c);
+                }
+                return c;
+            })
+            setCartShoes(CartShoes);
+        }
+    }
+
+    const moreShoes = () => {
+        if (present) {
+            CartShoes = CartShoes.filter((c) => {
+                if (c.shoeId === id) {
+                    c.qty += 1;
+                    setShoeInfo(c);
+                }
+                return c;
+            });
+            setCartShoes(CartShoes);
+        }
+    }
 
     const getShoeInfo = async () => {
         try {
             const response = await axios.post('http://localhost:5000/shoesPrices', { data: id });
-            console.log(response.data);
-            setShoeInfo(response.data);
+            // console.log(response.data);
+            setShoeInfo({ shoeId: id, title: response.data.shoeName, desc: response.data.description, price: response.data.retailPrice, thumbnail: response.data.thumbnail, qty: 1 });
         }
         catch (e) {
             console.log('cannot get shoe info!');
@@ -29,9 +69,30 @@ function SingleShoePage() {
 
     useEffect(() => {
 
-        getShoeInfo();
+        for (let i = 0; i < CartShoes.length; i++) {
+            if (CartShoes[i].shoeId === id) {
+                setPresent(true);
+                break;
+            }
+        }
 
-    }, [])
+        getShoeInfo();
+    }, []);
+
+    useEffect(() => {
+        let flag = false;
+        for (let i = 0; i < CartShoes.length; i++) {
+            if (CartShoes[i].shoeId === id) {
+                flag = true;
+            }
+        }
+
+        if (!flag) {
+            setCartShoes(CartShoes);
+            setPresent(false);
+        }
+    }, [CartShoes]);
+
 
     return (
         <>
@@ -46,14 +107,14 @@ function SingleShoePage() {
                 <div className="shoeDetails">
 
                     <div className="shoeAbout">
-                        <h1>{shoeInfo.shoeName}</h1>
+                        <h1>{shoeInfo.title}</h1>
                         <div className="shoeInfo">
-                            {shoeInfo.description}
+                            {shoeInfo.desc}
                         </div>
                     </div>
 
                     <div className="shoePricing">
-                        <h3>{`$${shoeInfo.retailPrice}`} or {`$${(shoeInfo.retailPrice / 12).toFixed(2)}/month`}</h3>
+                        <h3>{`$${shoeInfo.price}`} or {`$${(shoeInfo.price / 12).toFixed(2)}/month`}</h3>
                         <div className="shoePricingMessage">
                             Suggest payments with 12 months special financing
                         </div>
@@ -61,9 +122,9 @@ function SingleShoePage() {
 
                     <div className="shoePairs">
                         <div className="shoePairsCount">
-                            <button>+</button>
-                            <span>3</span>
-                            <button>-</button>
+                            <button onClick={moreShoes}>+</button>
+                            <span>{present ? shoeInfo.qty : 0}</span>
+                            <button onClick={lessShoes}>-</button>
                         </div>
                         <div className="shoePairsCountMessage">
                             <span>Only 12 items left!</span>
@@ -73,7 +134,7 @@ function SingleShoePage() {
 
                     <div className="shoeBuyOrAdd">
                         <button className="Buy">But Now</button>
-                        <button className="Add">Add to Cart</button>
+                        <button className="Add" onClick={addToCart}>Add to Cart</button>
                     </div>
 
                     <div className="customerService">

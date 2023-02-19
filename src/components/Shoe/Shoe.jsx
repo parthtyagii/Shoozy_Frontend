@@ -32,7 +32,7 @@ function Shoe({ title, desc, thumbnail, shoeId, price }) {
 
     const clickedAddLiked = () => {
         if (!heart) {
-            LikedShoes = [...LikedShoes, { shoeId }];
+            LikedShoes = [...LikedShoes, { shoeId, title, desc, price, thumbnail }];
             setLikedShoes(LikedShoes);
         }
         else {
@@ -59,7 +59,7 @@ function Shoe({ title, desc, thumbnail, shoeId, price }) {
         else {
             setAddCart(false);
         }
-        
+
         // console.log(CartShoes);
 
         let liked_hai = false;

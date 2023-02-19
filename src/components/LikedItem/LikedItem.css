@@ -36,7 +36,7 @@
 .likedItem .likedItemImg img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .likedItemAbout {
@@ -58,6 +58,11 @@
     font-family: 'Titillium Web', sans-serif;
     line-height: 18px;
     overflow-y: scroll;
+}
+
+.likedItemAbout .likedItemTitle:hover{
+    text-decoration: underline;
+    transform: scale(1.01);
 }
 
 .likedItemAbout .likedItemTitle::-webkit-scrollbar {

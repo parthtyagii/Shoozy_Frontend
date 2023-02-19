@@ -10,20 +10,18 @@ import RecordBoxCart from '../RecordBoxCart/RecordBoxCart';
 import RecordBoxLiked from '../RecordBoxLiked/RecordBoxLiked';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ShoesContext } from '../../Context/Context';
+import { useContext, useEffect } from 'react';
 
 
 
 
 function Navbar() {
 
-    const [likedShoes, setLikedShoes] = useState(false);
-    const [cartShoes, setCartShoes] = useState(false);
+    let { LikedShoes, setLikedShoes, CartShoes, setCartShoes } = useContext(ShoesContext);
 
-
-
-
-
-
+    const [likedListShoes, setLikedListShoes] = useState(false);
+    const [cartListShoes, setCartListShoes] = useState(false);
 
     return (
         <div className="navContainer">
@@ -61,18 +59,22 @@ function Navbar() {
                 <ul>
                     <li><BiBell /></li>
                     <li><BsChatDots /></li>
-                    <li><AiOutlineHeart onClick={(e) => setLikedShoes(!likedShoes)} />
-                        <span className='Count'>5</span>
+                    <li><AiOutlineHeart onClick={(e) => setLikedListShoes(!likedListShoes)} />
+                        {(LikedShoes.length > 0) &&
+                            <span className='Count'>{LikedShoes.length}</span>
+                        }
 
-                        {likedShoes &&
+                        {likedListShoes &&
                             <RecordBoxLiked />
                         }
 
                     </li>
-                    <li><AiOutlineShoppingCart onClick={(e) => setCartShoes(!cartShoes)} />
-                        <span className='Count'>5</span>
+                    <li><AiOutlineShoppingCart onClick={(e) => setCartListShoes(!cartListShoes)} />
+                        {(CartShoes.length > 0) &&
+                            <span className='Count'>{CartShoes.length}</span>
+                        }
 
-                        {cartShoes &&
+                        {cartListShoes &&
                             <RecordBoxCart />
                         }
 

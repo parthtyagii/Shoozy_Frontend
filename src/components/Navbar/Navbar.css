@@ -6,7 +6,7 @@
     font-family: 'Roboto', sans-serif;
     background-color: white;
     
-    /* position: sticky; */
+    position: sticky;
     top: 0;
     z-index: 1;
 
@@ -163,7 +163,7 @@
 .Count {
     min-width: 16px;
     min-height: 16px;
-    padding: 0px;
+    padding: 1px;
     color: white;
     background-color: red;
     position: absolute;
