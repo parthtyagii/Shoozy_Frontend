@@ -50,7 +50,7 @@ To get a local copy up and running follow these simple example steps.
 * Clone the repo 
 
 ```sh
-     git clone https://github.com/parthtyagii/MovieApp
+     git clone https://github.com/parthtyagii/Shoozy_Frontend
 ```
 
 * Install NPM packages in both frontend and backend folders.
