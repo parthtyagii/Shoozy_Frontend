@@ -17,7 +17,7 @@ AOS.init();
 
 function Homepage({ searched, setSearched }) {
 
-    const [allShoes, setAllShoes] = useState([]);
+    const [allShoes, setAllShoes] = useState(null);
     const [loading, setLoading] = useState(false);
     const [loadingMain, setLoadingMain] = useState(false);
 

@@ -23,7 +23,7 @@ function Main({ allShoes, loadingMain }) {
 
             <main>
 
-                {!loadingMain && allShoes &&
+                {!loadingMain && (allShoes !== null) &&
                     allShoes.map((s) => {
                         return (
                             <Shoe key={s._id} title={s.shoeName} desc={s.description} thumbnail={s.thumbnail} shoeId={s.styleID} price={s.retailPrice} />
