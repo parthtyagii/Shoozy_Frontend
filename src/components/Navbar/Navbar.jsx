@@ -64,7 +64,7 @@ function Navbar() {
                         </a>
                     </li>
                     <li>
-                        <a href='https://github.com/parthtyagii?tab=overview&from=2022-06-01&to=2022-06-20' className='link'>
+                        <a href='https://github.com/parthtyagii/Shoozy_Frontend' className='link'>
                             GitHub
                         </a>
                     </li>
