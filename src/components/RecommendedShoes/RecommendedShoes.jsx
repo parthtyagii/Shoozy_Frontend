@@ -7,17 +7,37 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 
-function RecommendedShoes({ setAllShoes }) {
+const STYLE = {
+    backgroundColor: '#0014FF',
+    border: '1px solid #0014FF',
+    color: 'white'
+}
+
+function RecommendedShoes({ setAllShoes, setLoadingMain }) {
+
+    let [shoeBrand, setShoeBrand] = useState('all');
+
 
     const getBrandShoes = async (targetName) => {
         try {
+            setLoadingMain(true);
             if (targetName !== 'all') {
                 const response = await axios.post('http://localhost:5000/shoes', { data: targetName });
-                setAllShoes(response.data);
+                if (response) {
+                    setTimeout(() => {
+                        setAllShoes(response.data);
+                        setLoadingMain(false);
+                    }, 1000);
+                }
             }
             else {
                 const response = await axios.get('http://localhost:5000/shoesPopular', { data: targetName });
-                setAllShoes(response.data);
+                if (response) {
+                    setTimeout(() => {
+                        setAllShoes(response.data);
+                        setLoadingMain(false);
+                    }, 1000);
+                }
             }
         }
         catch (e) {
@@ -26,20 +46,30 @@ function RecommendedShoes({ setAllShoes }) {
         }
     }
 
+    const selectedBrand = (e) => {
+        const brand = e.target.name;
+        setShoeBrand(brand);
+        getBrandShoes(brand);
+    }
+
+    useEffect(() => {
+        setShoeBrand('all');
+    }, [])
+
     return (
         <div className='recommendedShoesContainer' data-aos="fade-up" data-aos-duration="1000">
             <h3>Recommeded Shoes</h3>
             <div className="brandOptions">
-                <button name='all' onClick={(e) => getBrandShoes(e.target.name)}>All Products</button>
-                <button name='Nike' onClick={(e) => getBrandShoes(e.target.name)}>Nike</button>
-                <button name='Adidas' onClick={(e) => getBrandShoes(e.target.name)}>Adidas</button>
-                <button name='Puma' onClick={(e) => getBrandShoes(e.target.name)}>Puma</button>
-                <button name='Vans' onClick={(e) => getBrandShoes(e.target.name)}>Vans</button>
-                <button name='Reebok' onClick={(e) => getBrandShoes(e.target.name)}>Reebok</button>
-                <button name='Converse' onClick={(e) => getBrandShoes(e.target.name)}>Converse</button>
-                <button name='New Balance' onClick={(e) => getBrandShoes(e.target.name)}>New Balance</button>
+                <button name='all' onClick={selectedBrand} style={(shoeBrand === 'all') ? STYLE : {}}>All Products</button>
+                <button name='Nike' onClick={selectedBrand} style={(shoeBrand === 'Nike') ? STYLE : {}}>Nike</button>
+                <button name='Adidas' onClick={selectedBrand} style={(shoeBrand === 'Adidas') ? STYLE : {}}>Adidas</button>
+                <button name='Puma' onClick={selectedBrand} style={(shoeBrand === 'Puma') ? STYLE : {}}>Puma</button>
+                <button name='Vans' onClick={selectedBrand} style={(shoeBrand === 'Vans') ? STYLE : {}}>Vans</button>
+                <button name='Reebok' onClick={selectedBrand} style={(shoeBrand === 'Reebok') ? STYLE : {}}>Reebok</button>
+                <button name='Converse' onClick={selectedBrand} style={(shoeBrand === 'Converse') ? STYLE : {}}>Converse</button>
+                <button name='New Balance' onClick={selectedBrand} style={(shoeBrand === 'New Balance') ? STYLE : {}}>New Balance</button>
             </div>
-        </div>
+        </div >
     );
 }
 

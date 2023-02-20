@@ -55,13 +55,19 @@
     transition: all 0.15s linear;
 }
 
-.brandOptions button:nth-of-type(1) {
+/* .brandOptions button:nth-of-type(1) {
+    background-color: #0014FF;
+    border: 1px solid #0014FF;
+    color: white;
+} */
+
+.brandOptions button:hover{
     background-color: #0014FF;
     border: 1px solid #0014FF;
     color: white;
 }
 
-.brandOptions button:hover{
+.shoeBrandSelected{
     background-color: #0014FF;
     border: 1px solid #0014FF;
     color: white;

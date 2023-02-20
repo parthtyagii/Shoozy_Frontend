@@ -20,6 +20,11 @@ function CheckoutPage() {
     let { CartShoes, setCartShoes } = useContext(ShoesContext);
     let [totalBill, setTotalBill] = useState(0);
     let [loading, setLoading] = useState(true);
+    let [showModal, setShowModal] = useState(false);
+
+    const finishOrder = () => {
+        setShowModal(true);
+    }
 
     useEffect(() => {
         let t = 0;
@@ -27,6 +32,7 @@ function CheckoutPage() {
             t = t + (CartShoes[i].price * CartShoes[i].qty);
         }
         setTotalBill(t);
+        console.log('alsdkj')
 
         setTimeout(() => {
             setLoading(false);
@@ -35,11 +41,13 @@ function CheckoutPage() {
 
     return (
         <>
-            <Navbar />
+            {!showModal &&
+                <Navbar />
+            }
 
             {loading &&
                 <div className="loader">
-                    <BeatLoader color="#0014FF" />
+                    <BeatLoader color="#0014FF" size={25} />
                 </div>
             }
 
@@ -224,7 +232,7 @@ function CheckoutPage() {
                             </div>
 
                             <div className="orderPay">
-                                <button className="pay">Pay ${((totalBill) + (totalBill / 10) + (totalBill / 8)).toFixed(2)}</button>
+                                <button onClick={finishOrder} className="pay">Pay ${((totalBill) + (totalBill / 10) + (totalBill / 8)).toFixed(2)}</button>
                             </div>
 
                         </div>
@@ -233,6 +241,30 @@ function CheckoutPage() {
 
                 </div>
             }
+
+            {showModal &&
+                <div className="payModal">
+                    <div className='modal'>
+                        <div className="upperPart">
+                            <div className="modalIcon">
+                                <i className="fa-solid fa-circle-check payIcon"></i>
+                            </div>
+                        </div>
+
+                        <div className="lowerPart" data-aos="fade-up" data-aos-duration="600"
+                            data-aos-easing="ease-in-out">
+                            <div>Your order has been accepted</div>
+                            <div>Transaction ID : <span>2034923094</span></div>
+                            <Link to='/' className='link'>
+                                <button>
+                                    Continue Shopping
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            }
+
         </>
     );
 }

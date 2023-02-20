@@ -600,7 +600,7 @@ img:nth-of-type(3) {
     font-size: 1.3rem;
     font-weight: 500;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.1s;
     margin-bottom: 10px;
 
     display: flex;
@@ -609,5 +609,147 @@ img:nth-of-type(3) {
 }
 
 .orderSummary .orderPay .pay:active {
-    transform: scale(0.985);
+    transform: scale(0.96);
+}
+
+.payModal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payModal .modal {
+    width: 35vw;
+    height: 70vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1.5rem;
+    animation-name: show-modal;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+
+.payModal .modal .upperPart {
+    width: 100%;
+    height: 60%;
+    border-radius: 1.5rem 1.5rem 0 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payModal .modal .upperPart .modalIcon {
+    width: auto;
+    height: auto;
+    font-size: 5rem;
+    padding: 10px;
+    background-color: white;
+    color: #ADE792;
+    border-radius: 50%;
+
+    animation-name: show-modal;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-delay: 0.1s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payModal .modal .upperPart .modalIcon .payIcon {
+    border-radius: 50%;
+    box-shadow: 0px 5px 50px #ade79286,
+        0px -5px 50px #ade79286,
+        5px 0px 50px #ade79286,
+        -5px 0px 50px #ade79286;
+}
+
+.payModal .modal .lowerPart {
+    width: 100%;
+    height: 40%;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 1.5rem;
+
+    position: relative;
+    bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.payModal .modal .lowerPart div {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payModal .modal .lowerPart div:nth-of-type(1) {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+}
+
+.payModal .modal .lowerPart div:nth-of-type(2) {
+    font-size: 0.85rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.payModal .modal .lowerPart button {
+    min-width: 40%;
+    height: auto;
+    padding: 10px;
+    font-size: 0.8rem;
+    border-radius: 3rem;
+    color: white;
+    background-color: #FFB200;
+    border: 1px solid #FFB200;
+    transition: all 0.05s linear;
+    cursor: pointer;
+}
+
+.payModal .modal .lowerPart button:active {
+    transform: scale(0.95);
+}
+
+@keyframes show-modal {
+    0% {
+        transform: scale(0);
+    }
+
+    25% {
+        transform: scale(0.25);
+    }
+
+    50% {
+        transform: scale(0.50);
+    }
+
+    75% {
+        transform: scale(0.75);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }

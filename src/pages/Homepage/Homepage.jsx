@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import SyncLoader from 'react-spinners/SyncLoader';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 AOS.init();
 
 
@@ -19,10 +19,12 @@ AOS.init();
 function Homepage() {
 
     const [allShoes, setAllShoes] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
+    const [loadingMain, setLoadingMain] = useState(false);
 
     const getAllShoes = async () => {
         try {
+            setLoading(true);
             const response = await axios.get('http://localhost:5000/shoesPopular');
             if (response) {
                 setTimeout(() => {
@@ -48,7 +50,7 @@ function Homepage() {
         <>
             {loading && (
                 <div className="loader">
-                    <SyncLoader color="#0014FF" />
+                    <SyncLoader color="#0014FF" size={25}/>
                 </div>
             )}
 
@@ -56,8 +58,8 @@ function Homepage() {
                 <div className='homepageContainer'>
                     <Navbar />
                     <Header />
-                    <RecommendedShoes setAllShoes={setAllShoes} />
-                    <Main allShoes={allShoes} />
+                    <RecommendedShoes setAllShoes={setAllShoes} setLoadingMain={setLoadingMain} />
+                    <Main allShoes={allShoes} loadingMain={loadingMain} />
                     <Topbrands />
                     <HomepageFooter />
                 </div>

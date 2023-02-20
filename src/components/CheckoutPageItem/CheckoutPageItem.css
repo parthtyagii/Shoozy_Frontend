@@ -44,7 +44,7 @@
     transition: all;
 }
 
-.checkoutPageItem .itemInfo .itemTitle:hover{
+.checkoutPageItem .itemInfo .itemTitle:hover {
     transform: scale(1.01);
     text-decoration: underline;
 }
@@ -98,6 +98,7 @@
     font-size: 1.4rem;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
+    color: #0014FF;
 
     display: flex;
     justify-content: flex-end;

@@ -23,7 +23,7 @@ function SingleShoePage() {
     const { id } = useParams();
     const [shoeInfo, setShoeInfo] = useState({});
     const [present, setPresent] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [showMessage, setShowMessage] = useState(false);
 
 
@@ -76,6 +76,7 @@ function SingleShoePage() {
 
     const getShoeInfo = async () => {
         try {
+            setLoading(true);
             const response = await axios.post('http://localhost:5000/shoesPrices', { data: id });
             // console.log(response.data);
             setTimeout(() => {
@@ -99,7 +100,7 @@ function SingleShoePage() {
         }
 
         getShoeInfo();
-    }, []);
+    }, [id]);
 
     useEffect(() => {
         let flag = false;
@@ -122,7 +123,7 @@ function SingleShoePage() {
 
             {loading &&
                 <div className="loader">
-                    <BeatLoader color="#0014FF" />
+                    <BeatLoader color="#0014FF" size={25} />
                 </div>
             }
 
