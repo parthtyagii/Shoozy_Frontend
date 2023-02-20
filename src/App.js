@@ -6,26 +6,23 @@ import RecordBoxCart from './components/RecordBoxCart/RecordBoxCart';
 import SingleShoePage from './pages/SingleShowPage/SingleShoePage';
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import Homepage from './pages/Homepage/Homepage';
+import SearchPage from './pages/SearchPage/SearchPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 
 
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
 
-        {/* <Navbar /> */}
-        {/* <Header /> */}
-        {/* <Main /> */}
-        {/* <Homepage /> */}
-        {/* <SingleShoePage /> */}
-        {/* <CheckoutPage /> */}
-
         <Route path='/' element={<Homepage />} />
         <Route path='/shoe/:id' element={<SingleShoePage />} />
         <Route path='/checkout' element={<CheckoutPage />} />
+        <Route path='/search/:word' element={<SearchPage />} />
 
       </Routes>
     </BrowserRouter>

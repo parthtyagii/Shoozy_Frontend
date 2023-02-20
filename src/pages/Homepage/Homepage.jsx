@@ -5,7 +5,6 @@ import Main from '../../components/Main/Main';
 import RecommendedShoes from '../../components/RecommendedShoes/RecommendedShoes';
 import Topbrands from '../../components/Topbrands/Topbrands';
 import HomepageFooter from '../../components/HomepageFooter/HomepageFooter';
-import SearchPage from '../../components/SearchPage/SearchPage';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import SyncLoader from 'react-spinners/SyncLoader';
@@ -17,12 +16,11 @@ AOS.init();
 
 
 
-function Homepage() {
+function Homepage({ searched, setSearched }) {
 
     const [allShoes, setAllShoes] = useState([]);
     const [loading, setLoading] = useState(false);
     const [loadingMain, setLoadingMain] = useState(false);
-    const [searched, setSearched] = useState('');
 
     const getAllShoes = async () => {
         try {
@@ -44,7 +42,7 @@ function Homepage() {
     useEffect(() => {
 
         getAllShoes();
-        setSearched('');
+
     }, [])
 
 
@@ -59,14 +57,9 @@ function Homepage() {
             {!loading && (
                 <div className='homepageContainer'>
                     <Navbar setSearched={setSearched} />
-                    {!searched && (<>
-                        <Header />
-                        <RecommendedShoes setAllShoes={setAllShoes} setLoadingMain={setLoadingMain} />
-                        <Main allShoes={allShoes} loadingMain={loadingMain} />
-                    </>)}
-                    {searched &&
-                        <SearchPage searched={searched}/>
-                    }
+                    <Header />
+                    <RecommendedShoes setAllShoes={setAllShoes} setLoadingMain={setLoadingMain} />
+                    <Main allShoes={allShoes} loadingMain={loadingMain} />
                     <Topbrands />
                     <HomepageFooter />
                 </div>

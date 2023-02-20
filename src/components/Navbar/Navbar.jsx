@@ -12,21 +12,24 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoesContext } from '../../Context/Context';
 import { useContext, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
 
 
 
-function Navbar({ setSearched }) {
+function Navbar() {
 
-    let { LikedShoes, setLikedShoes, CartShoes, setCartShoes } = useContext(ShoesContext);
+    let { LikedShoes, setLikedShoes, CartShoes, setCartShoes, searched, setSearched } = useContext(ShoesContext);
 
     const [likedListShoes, setLikedListShoes] = useState(false);
     const [cartListShoes, setCartListShoes] = useState(false);
     const [searchWord, setSearchWord] = useState('');
+    const navigate = useNavigate();
 
     const searching = (e) => {
         if ((e.key === 'Enter') && (searchWord !== '')) {
             setSearched(searchWord);
+            navigate(`/search/${searchWord}`);
         }
     }
 
