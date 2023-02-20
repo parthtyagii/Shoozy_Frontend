@@ -29,8 +29,9 @@ Shoozy is an e-commerce website for shoe lovers, build using the MERN stack.
 
 * Made using MERN Stack.
 
-* **Demo** - (https://shooozy.netlify.app/)
+* **Backend** - (https://github.com/parthtyagii/Shoozy_Backend)
 
+* **Demo** - (https://shooozy.netlify.app/)
 
 ## Getting Started
 
