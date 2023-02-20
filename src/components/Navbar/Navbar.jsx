@@ -16,12 +16,19 @@ import { useContext, useEffect } from 'react';
 
 
 
-function Navbar() {
+function Navbar({ setSearched }) {
 
     let { LikedShoes, setLikedShoes, CartShoes, setCartShoes } = useContext(ShoesContext);
 
     const [likedListShoes, setLikedListShoes] = useState(false);
     const [cartListShoes, setCartListShoes] = useState(false);
+    const [searchWord, setSearchWord] = useState('');
+
+    const searching = (e) => {
+        if ((e.key === 'Enter') && (searchWord !== '')) {
+            setSearched(searchWord);
+        }
+    }
 
     return (
         <div className="navContainer">
@@ -32,7 +39,7 @@ function Navbar() {
                 </div>
 
                 <div className="userSearch">
-                    <input type="text" name="user_search" id="user_search" placeholder='Search Shoe' />
+                    <input type="text" value={searchWord} onChange={(e) => setSearchWord(e.target.value)} onKeyDown={(e) => searching(e)} name="user_search" id="user_search" placeholder='Search Shoe' autoComplete='off' required />
                     <CiSearch className='searchIcon' />
                 </div>
             </div>
@@ -46,9 +53,6 @@ function Navbar() {
                         <select name="products" id="products">
                             <option value="-">Products</option>
                             <option value="Shoes">Shoes</option>
-                            {/* <option value="Nike">Nike</option>
-                            <option value="Adidas">Adidas</option>
-                            <option value="Reebok">Reebok</option> */}
                         </select>
                     </li>
                     <li>
@@ -91,7 +95,7 @@ function Navbar() {
                 </ul>
 
                 <div className="navProfileImg">
-                    <img src="https://i.scdn.co/image/ab6761610000e5ebd3b9cce395e9b88684af3a59" alt="profile_image" />
+                    <img src="https://res.cloudinary.com/dw0up71e2/image/upload/v1676901944/-lag3vi_ewidiz.jpg" alt="profile_image" />
                 </div>
 
             </div>

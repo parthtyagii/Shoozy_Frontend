@@ -21,10 +21,7 @@ function CheckoutPage() {
     let [totalBill, setTotalBill] = useState(0);
     let [loading, setLoading] = useState(true);
     let [showModal, setShowModal] = useState(false);
-
-    const finishOrder = () => {
-        setShowModal(true);
-    }
+    
 
     useEffect(() => {
         let t = 0;
@@ -232,7 +229,7 @@ function CheckoutPage() {
                             </div>
 
                             <div className="orderPay">
-                                <button onClick={finishOrder} className="pay">Pay ${((totalBill) + (totalBill / 10) + (totalBill / 8)).toFixed(2)}</button>
+                                <button onClick={() => setShowModal(true)} className="pay">Pay ${((totalBill) + (totalBill / 10) + (totalBill / 8)).toFixed(2)}</button>
                             </div>
 
                         </div>
@@ -256,7 +253,7 @@ function CheckoutPage() {
                             <div>Your order has been accepted</div>
                             <div>Transaction ID : <span>2034923094</span></div>
                             <Link to='/' className='link'>
-                                <button>
+                                <button onClick={() => setCartShoes([])}>
                                     Continue Shopping
                                 </button>
                             </Link>

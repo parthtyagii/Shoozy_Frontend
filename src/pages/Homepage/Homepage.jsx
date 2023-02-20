@@ -5,6 +5,7 @@ import Main from '../../components/Main/Main';
 import RecommendedShoes from '../../components/RecommendedShoes/RecommendedShoes';
 import Topbrands from '../../components/Topbrands/Topbrands';
 import HomepageFooter from '../../components/HomepageFooter/HomepageFooter';
+import SearchPage from '../../components/SearchPage/SearchPage';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import SyncLoader from 'react-spinners/SyncLoader';
@@ -21,6 +22,7 @@ function Homepage() {
     const [allShoes, setAllShoes] = useState([]);
     const [loading, setLoading] = useState(false);
     const [loadingMain, setLoadingMain] = useState(false);
+    const [searched, setSearched] = useState('');
 
     const getAllShoes = async () => {
         try {
@@ -42,7 +44,7 @@ function Homepage() {
     useEffect(() => {
 
         getAllShoes();
-
+        setSearched('');
     }, [])
 
 
@@ -50,16 +52,21 @@ function Homepage() {
         <>
             {loading && (
                 <div className="loader">
-                    <SyncLoader color="#0014FF" size={25}/>
+                    <SyncLoader color="#0014FF" size={25} />
                 </div>
             )}
 
             {!loading && (
                 <div className='homepageContainer'>
-                    <Navbar />
-                    <Header />
-                    <RecommendedShoes setAllShoes={setAllShoes} setLoadingMain={setLoadingMain} />
-                    <Main allShoes={allShoes} loadingMain={loadingMain} />
+                    <Navbar setSearched={setSearched} />
+                    {!searched && (<>
+                        <Header />
+                        <RecommendedShoes setAllShoes={setAllShoes} setLoadingMain={setLoadingMain} />
+                        <Main allShoes={allShoes} loadingMain={loadingMain} />
+                    </>)}
+                    {searched &&
+                        <SearchPage searched={searched}/>
+                    }
                     <Topbrands />
                     <HomepageFooter />
                 </div>

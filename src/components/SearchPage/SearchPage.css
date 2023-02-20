@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Anton&family=Bebas+Neue&family=Fjalla+One&family=Luckiest+Guy&family=Roboto:wght@100;300;400;500;700;900&family=Titillium+Web:ital,wght@0,400;0,700;0,900;1,600&display=swap');
+
+
+.searchPageContainer {
+    width: 100%;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+    padding: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchPageContainer .resultMessage {
+    width: 100%;
+    height: auto;
+    color: rgb(152, 146, 146);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.searchPageContainer .resultMessage span {
+    color: black;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.searchPageContainer .resultShoes {
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    row-gap: 30px;
+}
+
+.searchPageLoader{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
