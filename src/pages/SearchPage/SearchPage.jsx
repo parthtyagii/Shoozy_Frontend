@@ -12,8 +12,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 
-
-
 function SearchPage() {
 
     let { searched, setSearched } = useContext(ShoesContext);
@@ -23,7 +21,7 @@ function SearchPage() {
     const getSearchedShoes = async () => {
         try {
             setLoading(true);
-            const response = await axios.post('http://localhost:5000/shoes', { data: searched });
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND}/shoes`, { data: searched });
             if (response) {
                 setTimeout(() => {
                     setSearchedShoes(response.data);

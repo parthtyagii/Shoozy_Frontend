@@ -52,7 +52,6 @@
 .itemAbout {
     width: 150px;
     height: 80px;
-    /* background-color: darkseagreen; */
 
     display: flex;
     flex-direction: column;
@@ -92,7 +91,6 @@
 .itemAbout .itemCount {
     width: auto;
     height: 20px;
-    /* background-color: white; */
     border: 1px solid black;
     margin-top: 8px;
 

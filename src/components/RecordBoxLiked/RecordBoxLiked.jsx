@@ -11,7 +11,6 @@ function RecordBoxLiked() {
 
     const { LikedShoes, setLikedShoes } = useContext(ShoesContext);
 
-
     return (
         <div className='recordBoxLikedContainer'>
             <div className="recordBoxLikedUpper">

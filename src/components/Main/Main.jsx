@@ -5,14 +5,13 @@ import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ClipLoader from 'react-spinners/ClipLoader';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 
 
 function Main({ allShoes, loadingMain }) {
-
-
 
     return (
         <>
@@ -31,7 +30,6 @@ function Main({ allShoes, loadingMain }) {
                         );
                     })
                 }
-
 
             </main>
         </>

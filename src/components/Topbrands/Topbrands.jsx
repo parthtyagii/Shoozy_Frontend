@@ -1,18 +1,9 @@
 import React from 'react';
 import './Topbrands.css';
-import IMAGE1 from '../../brandImages/nike_logo.jpg';
-import IMAGE2 from '../../brandImages/adidas_logo.jpg';
-import IMAGE3 from '../../brandImages/puma_logo.jpg';
-import IMAGE4 from '../../brandImages/vans_logo.jpg';
-import IMAGE5 from '../../brandImages/reebok_logo1.png';
-import IMAGE6 from '../../brandImages/converse_logo.jpg';
-import IMAGE7 from '../../brandImages/newbalance_logo1.jpg';
+
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 AOS.init();
-
-
-
 
 function Topbrands() {
     return (
@@ -21,40 +12,40 @@ function Topbrands() {
             <div className="shoeBrands">
 
                 <div>
-                    <img src={IMAGE1} alt="brand_image" />
+                    <img src='https://res.cloudinary.com/dw0up71e2/image/upload/v1676912229/nike_logo_smtxmm.jpg' alt="brand_image" />
                     <span className="brandName">Nike</span>
                 </div>
 
                 <div>
-                    <img src={IMAGE2} alt="brand_image" />
+                    <img src='https://res.cloudinary.com/dw0up71e2/image/upload/v1676912195/adidas_logo_mxx0gr.jpg' alt="brand_image" />
                     <span className="brandName">Adidas</span>
 
                 </div>
 
                 <div>
-                    <img src={IMAGE3} alt="brand_image" />
+                    <img src='https://res.cloudinary.com/dw0up71e2/image/upload/v1676912238/puma_logo_jhbve2.jpg' alt="brand_image" />
                     <span className="brandName">Puma</span>
 
                 </div>
 
                 <div>
-                    <img src={IMAGE4} alt="brand_image" />
+                    <img src='https://res.cloudinary.com/dw0up71e2/image/upload/v1676912253/vans_logo_hd08dn.jpg' alt="brand_image" />
                     <span className="brandName">Vans</span>
 
                 </div>
 
                 <div>
-                    <img src={IMAGE5} alt="brand_image" />
+                    <img src='https://res.cloudinary.com/dw0up71e2/image/upload/v1676912250/reebok_logo1_s2c817.png' alt="brand_image" />
                     <span className="brandName">Reebok</span>
                 </div>
 
                 <div>
-                    <img src={IMAGE6} alt="brand_image" />
+                    <img src='https://res.cloudinary.com/dw0up71e2/image/upload/v1676912203/converse_logo_frvkrh.jpg' alt="brand_image" />
                     <span className="brandName">Converse</span>
                 </div>
 
                 <div>
-                    <img src={IMAGE7} alt="brand_image" />
+                    <img src='https://res.cloudinary.com/dw0up71e2/image/upload/v1676912220/newbalance_logo1_tmvgtr.jpg' alt="brand_image" />
                     <span className="brandName">New Balance</span>
                 </div>
 

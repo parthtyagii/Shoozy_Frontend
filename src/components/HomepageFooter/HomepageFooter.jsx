@@ -1,13 +1,11 @@
 import React from 'react';
 import './HomepageFooter.css';
 import Logo from '../../shoozy.jpg';
+import { Link } from 'react-router-dom';
+
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 AOS.init();
-
-
-
-
 
 function HomepageFooter() {
     return (
@@ -46,12 +44,16 @@ function HomepageFooter() {
                 <div className='leftSide'>
                     <div>
                         <img src={Logo} alt="image" />
-                        <h4>Shoozy</h4>
+                        <Link to='/' className='link'>
+                            <h4>
+                                Shoozy
+                            </h4>
+                        </Link>
                     </div>
 
                     <div>
-                        Shoozy is a website that offers a wide range of shoes and sneakers from various brands. 
-                        Shoozy provides a convenient online shopping experience, making it easy for customers to find their 
+                        Shoozy is a website that offers a wide range of shoes and sneakers from various brands.
+                        Shoozy provides a convenient online shopping experience, making it easy for customers to find their
                         perfect pair of shoes.
                     </div>
 

@@ -17,7 +17,6 @@
 .leftPart {
     width: 100%;
     height: 100%;
-    /* background-color: aquamarine; */
 
     display: flex;
     justify-content: center;
@@ -51,7 +50,7 @@
     padding-right: 15px;
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .leftPart #user_search:focus{
@@ -70,7 +69,6 @@
     width: 100%;
     height: 100%;
     padding-left: 20px;
-    /* background-color: cadetblue; */
 
     display: flex;
     justify-content: center;
@@ -112,7 +110,6 @@
 .right {
     width: 100%;
     height: 100%;
-    /* background-color: cadetblue; */
 
     display: flex;
     justify-content: center;
@@ -123,7 +120,6 @@
     width: auto;
     height: 100%;
     list-style-type: none;
-
 
     display: flex;
     flex-direction: row;

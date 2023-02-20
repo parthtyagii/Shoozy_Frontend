@@ -10,6 +10,7 @@ import { ShoesContext } from '../../Context/Context';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import BeatLoader from "react-spinners/BeatLoader";
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
@@ -26,11 +27,9 @@ function SingleShoePage() {
     const [loading, setLoading] = useState(false);
     const [showMessage, setShowMessage] = useState(false);
 
-
     const addToCart = () => {
         if (!present) {
-            CartShoes = [...CartShoes, { shoeId: id, title: shoeInfo.title, desc: shoeInfo.desc, price: shoeInfo.price, thumbnail: shoeInfo.thumbnail, qty: 1 }]
-            // console.log(CartShoes);
+            CartShoes = [...CartShoes, { shoeId: id, title: shoeInfo.title, desc: shoeInfo.desc, price: shoeInfo.price, thumbnail: shoeInfo.thumbnail, qty: 1 }];
             setPresent(true);
             setCartShoes(CartShoes);
         }
@@ -77,8 +76,7 @@ function SingleShoePage() {
     const getShoeInfo = async () => {
         try {
             setLoading(true);
-            const response = await axios.post('http://localhost:5000/shoesPrices', { data: id });
-            // console.log(response.data);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND}/shoesPrices`, { data: id });
             setTimeout(() => {
                 setShoeInfo({ shoeId: id, title: response.data.shoeName, desc: response.data.description, price: response.data.retailPrice, thumbnail: response.data.thumbnail, qty: 1 });
                 setLoading(false);
@@ -115,7 +113,6 @@ function SingleShoePage() {
             setPresent(false);
         }
     }, [CartShoes]);
-
 
     return (
         <>

@@ -3,6 +3,7 @@ import './RecommendedShoes.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRef } from 'react';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
@@ -17,12 +18,11 @@ function RecommendedShoes({ setAllShoes, setLoadingMain }) {
 
     let [shoeBrand, setShoeBrand] = useState('all');
 
-
     const getBrandShoes = async (targetName) => {
         try {
             setLoadingMain(true);
             if (targetName !== 'all') {
-                const response = await axios.post('http://localhost:5000/shoes', { data: targetName });
+                const response = await axios.post(`${process.env.REACT_APP_BACKEND}/shoes`, { data: targetName });
                 if (response) {
                     setTimeout(() => {
                         setAllShoes(response.data);
@@ -31,7 +31,7 @@ function RecommendedShoes({ setAllShoes, setLoadingMain }) {
                 }
             }
             else {
-                const response = await axios.get('http://localhost:5000/shoesPopular', { data: targetName });
+                const response = await axios.get(`${process.env.REACT_APP_BACKEND}/shoesPopular`, { data: targetName });
                 if (response) {
                     setTimeout(() => {
                         setAllShoes(response.data);

@@ -24,7 +24,6 @@
     font-weight: 400;
     margin-bottom: 20px;
 
-
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -106,9 +105,7 @@
 }
 
 .topbrandsContainer .shoeBrands div:hover .brandName {
-
     transform: scale(1.1);
-
     animation-name: showBrandName;
     animation-timing-function: linear;
     animation-duration: 0.08s;

@@ -8,11 +8,10 @@ import HomepageFooter from '../../components/HomepageFooter/HomepageFooter';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import SyncLoader from 'react-spinners/SyncLoader';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
-
-
 
 
 
@@ -25,7 +24,7 @@ function Homepage({ searched, setSearched }) {
     const getAllShoes = async () => {
         try {
             setLoading(true);
-            const response = await axios.get('http://localhost:5000/shoesPopular');
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND}/shoesPopular`);
             if (response) {
                 setTimeout(() => {
                     setAllShoes(response.data);
@@ -44,7 +43,6 @@ function Homepage({ searched, setSearched }) {
         getAllShoes();
 
     }, [])
-
 
     return (
         <>

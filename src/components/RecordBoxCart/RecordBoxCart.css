@@ -26,7 +26,6 @@
 .recordBoxUpper {
     width: 100%;
     height: 50px;
-    /* background-color: darkgoldenrod; */
     font-size: 1.3rem;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
@@ -44,9 +43,7 @@
     max-height: 200px;
     overflow-y: auto;
     font-family: 'Titillium Web', sans-serif;
-    /* background-color: darkcyan; */
     margin-bottom: 10px;
-
 
     display: flex;
     flex-direction: column;
@@ -76,7 +73,6 @@
     font-family: 'Titillium Web', sans-serif;
     border-top: 1px solid gray;
     padding-top: 15px;
-
 
     display: flex;
     flex-direction: column;

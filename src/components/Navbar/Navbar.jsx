@@ -15,8 +15,6 @@ import { useContext, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 
-
-
 function Navbar() {
 
     let { LikedShoes, setLikedShoes, CartShoes, setCartShoes, searched, setSearched } = useContext(ShoesContext);
@@ -38,7 +36,9 @@ function Navbar() {
 
             <div className="leftPart">
                 <div className="navLogoImg">
-                    <img src={logoImg} alt="logo_img" />
+                    <Link to='/' className='link'>
+                        <img src={logoImg} alt="logo_img" />
+                    </Link>
                 </div>
 
                 <div className="userSearch">

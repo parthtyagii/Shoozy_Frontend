@@ -21,8 +21,6 @@ function LikedItem({ title, price, thumbnail, shoeId }) {
         setLikedShoes(LikedShoes);
     }
 
-    console.log(title, price, thumbnail, shoeId)
-
     return (
         <div className='likedItem'>
 

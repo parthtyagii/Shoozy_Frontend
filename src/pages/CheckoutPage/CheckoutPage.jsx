@@ -13,15 +13,12 @@ import 'aos/dist/aos.css';
 AOS.init();
 
 
-
-
 function CheckoutPage() {
 
     let { CartShoes, setCartShoes } = useContext(ShoesContext);
     let [totalBill, setTotalBill] = useState(0);
     let [loading, setLoading] = useState(true);
     let [showModal, setShowModal] = useState(false);
-    
 
     useEffect(() => {
         let t = 0;
@@ -29,7 +26,6 @@ function CheckoutPage() {
             t = t + (CartShoes[i].price * CartShoes[i].qty);
         }
         setTotalBill(t);
-        console.log('alsdkj')
 
         setTimeout(() => {
             setLoading(false);

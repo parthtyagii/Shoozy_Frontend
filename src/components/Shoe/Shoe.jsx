@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useContext, useRef, useEffect, useState } from 'react';
 import { ShoesContext } from '../../Context/Context.js';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 AOS.init();
 
 
@@ -17,7 +17,6 @@ function Shoe({ title, desc, thumbnail, shoeId, price }) {
     let { LikedShoes, setLikedShoes, CartShoes, setCartShoes } = useContext(ShoesContext);
     let [heart, setHeart] = useState(false);
     let [addCart, setAddCart] = useState(false);
-
 
     const clickedAddCart = () => {
         if (!addCart) {
@@ -64,8 +63,6 @@ function Shoe({ title, desc, thumbnail, shoeId, price }) {
             setAddCart(false);
         }
 
-        // console.log(CartShoes);
-
         let liked_hai = false;
         for (let i = 0; i < LikedShoes.length; i++) {
             if (LikedShoes[i].shoeId === shoeId) {
@@ -79,9 +76,7 @@ function Shoe({ title, desc, thumbnail, shoeId, price }) {
             setHeart(false);
         }
 
-
     }, [CartShoes, LikedShoes]);
-
 
     return (
         <div className='shoeContainer' data-aos="fade-up" data-aos-duration="1000">
