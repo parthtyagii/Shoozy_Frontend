@@ -1,9 +1,6 @@
 <br/>
 <p align="center">
-  
-  <h1 align="center">Shoozy Website</h1>
-  <br>
-  
+  <h1 align="center">Shoozy Website</h1>  
 </p>
 
 
@@ -24,6 +21,8 @@ Shoozy is an e-commerce website for shoe lovers, build using the MERN stack.
    complete your purchase.
 
 <br>
+
+https://github.com/parthtyagii/Shoozy_Frontend/assets/80752912/9778fd24-1007-4cc8-b0ca-86207f7ef0fc
 
 ## Built With
 
@@ -80,5 +79,3 @@ To get a local copy up and running follow these simple example steps.
 ## Authors
 
 * **Parth Tyagi** - [parthtyagii](https://github.com/parthtyagii)
-
-
